@@ -13,6 +13,9 @@
 		731D68052107E76B00E987EA /* MoodLogger.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 731D68032107E76B00E987EA /* MoodLogger.xcdatamodeld */; };
 		731D68072107E76C00E987EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 731D68062107E76C00E987EA /* Assets.xcassets */; };
 		731D680A2107E76C00E987EA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 731D68082107E76C00E987EA /* LaunchScreen.storyboard */; };
+		731D68122107ECB700E987EA /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731D68112107ECB700E987EA /* CoreDataHelper.swift */; };
+		73CFDB4F21091A1300F92DB1 /* Custom Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CFDB4E21091A1300F92DB1 /* Custom Cell.swift */; };
+		C9423370B4B16A9F18595CDC /* Pods_MoodLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0E550D3B41BDF42165B7CFF /* Pods_MoodLogger.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,11 @@
 		731D68062107E76C00E987EA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		731D68092107E76C00E987EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		731D680B2107E76C00E987EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		731D68112107ECB700E987EA /* CoreDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHelper.swift; sourceTree = "<group>"; };
+		73CFDB4E21091A1300F92DB1 /* Custom Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Custom Cell.swift"; sourceTree = "<group>"; };
+		918D9CBE1CAE59D7ADD23ECE /* Pods-MoodLogger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoodLogger.release.xcconfig"; path = "Pods/Target Support Files/Pods-MoodLogger/Pods-MoodLogger.release.xcconfig"; sourceTree = "<group>"; };
+		C0E550D3B41BDF42165B7CFF /* Pods_MoodLogger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoodLogger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D3C54BB1930B94C549237282 /* Pods-MoodLogger.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoodLogger.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MoodLogger/Pods-MoodLogger.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +39,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9423370B4B16A9F18595CDC /* Pods_MoodLogger.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +51,8 @@
 			children = (
 				731D67FB2107E76B00E987EA /* MoodLogger */,
 				731D67FA2107E76B00E987EA /* Products */,
+				EE7898D7B6808DA7967C400E /* Pods */,
+				B1CC1047E62F0BD454556805 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -63,8 +74,27 @@
 				731D68082107E76C00E987EA /* LaunchScreen.storyboard */,
 				731D680B2107E76C00E987EA /* Info.plist */,
 				731D68032107E76B00E987EA /* MoodLogger.xcdatamodeld */,
+				731D68112107ECB700E987EA /* CoreDataHelper.swift */,
+				73CFDB4E21091A1300F92DB1 /* Custom Cell.swift */,
 			);
 			path = MoodLogger;
+			sourceTree = "<group>";
+		};
+		B1CC1047E62F0BD454556805 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C0E550D3B41BDF42165B7CFF /* Pods_MoodLogger.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EE7898D7B6808DA7967C400E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D3C54BB1930B94C549237282 /* Pods-MoodLogger.debug.xcconfig */,
+				918D9CBE1CAE59D7ADD23ECE /* Pods-MoodLogger.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +104,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 731D680E2107E76C00E987EA /* Build configuration list for PBXNativeTarget "MoodLogger" */;
 			buildPhases = (
+				E0BF5B7127C0DA92448CCE39 /* [CP] Check Pods Manifest.lock */,
 				731D67F52107E76B00E987EA /* Sources */,
 				731D67F62107E76B00E987EA /* Frameworks */,
 				731D67F72107E76B00E987EA /* Resources */,
+				F13895982E66A214FCE51322 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -133,6 +165,45 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		E0BF5B7127C0DA92448CCE39 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MoodLogger-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F13895982E66A214FCE51322 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-MoodLogger/Pods-MoodLogger-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/JTAppleCalendar/JTAppleCalendar.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JTAppleCalendar.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MoodLogger/Pods-MoodLogger-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		731D67F52107E76B00E987EA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -140,7 +211,9 @@
 			files = (
 				731D68052107E76B00E987EA /* MoodLogger.xcdatamodeld in Sources */,
 				731D67FF2107E76B00E987EA /* ViewController.swift in Sources */,
+				731D68122107ECB700E987EA /* CoreDataHelper.swift in Sources */,
 				731D67FD2107E76B00E987EA /* AppDelegate.swift in Sources */,
+				73CFDB4F21091A1300F92DB1 /* Custom Cell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,6 +355,7 @@
 		};
 		731D680F2107E76C00E987EA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D3C54BB1930B94C549237282 /* Pods-MoodLogger.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -300,6 +374,7 @@
 		};
 		731D68102107E76C00E987EA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 918D9CBE1CAE59D7ADD23ECE /* Pods-MoodLogger.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
