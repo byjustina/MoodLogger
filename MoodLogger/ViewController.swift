@@ -9,32 +9,79 @@
 import UIKit
 import JTAppleCalendar
 
+
 class ViewController: UIViewController {
     let formatter = DateFormatter()
     
     @IBOutlet weak var calendarView: JTAppleCalendarView!
+    @IBOutlet weak var year: UILabel!
+    @IBOutlet weak var month: UILabel!
+    
+    let outsideMonthColor: UIColor = .red
+    let monthColor = UIColor(red: 165, green: 255, blue: 200, alpha: 1.0)
+    let selectedMonthColor = UIColor.white
+    let currentDateSelectedViewColor = UIColor(red: 100, green: 200, blue: 300, alpha: 1.0)
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        setupCalendarView()
     }
-
+    
+    func setupCalendarView() {
+        // Set up calendar spacing
+        calendarView.minimumLineSpacing = 0
+        calendarView.minimumInteritemSpacing = 0
+        // Set up labels
+        calendarView.visibleDates { (visibleDates) in
+            self.setupViewsOfCalendar(from: visibleDates)
+        }
+    }
+    
+    func handleCellSelected(view: JTAppleCell? , cellState: CellState) {
+        guard let validCell = view as? CustomCell else { return }
+        if validCell.isSelected {
+            validCell.selectedView.isHidden = false
+        } else {
+            validCell.selectedView.isHidden = true
+        }
+    }
+    
+    func handleCellTextColor(view: JTAppleCell?, cellState: CellState) {
+        guard let validCell = view as? CustomCell else { return }
+        
+        if cellState.isSelected {
+            validCell.dateLabel.textColor = selectedMonthColor
+        } else {
+            if cellState.dateBelongsTo == .thisMonth {
+                validCell.dateLabel.textColor = monthColor
+            } else {
+                validCell.dateLabel.textColor = outsideMonthColor
+            }
+        }
+    }
+    
+    func setupViewsOfCalendar(from visibleDates: DateSegmentInfo) {
+        let date = visibleDates.monthDates.first!.date
+        
+        self.formatter.dateFormat = "yyyy"
+        self.year.text = self.formatter.string(from: date)
+        
+        self.formatter.dateFormat = "MMMM"
+        self.month.text = self.formatter.string(from: date)
+        
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
 }
 
-extension ViewController: JTAppleCalendarViewDelegate, JTAppleCalendarViewDataSource {
+extension ViewController: JTAppleCalendarViewDataSource {
     func calendar(_ calendar: JTAppleCalendarView, willDisplay cell: JTAppleCell, forItemAt date: Date, cellState: CellState, indexPath: IndexPath) {
         let myCustomCell = cell as! CustomCell
         sharedFunctionToConfigureCell(myCustomCell: myCustomCell, cellState: cellState, date: date)
-    }
-    
-    func calendar(_ calendar: JTAppleCalendarView, cellForItemAt date: Date, cellState: CellState, indexPath: IndexPath) -> JTAppleCell {
-        let myCustomCell = calendar.dequeueReusableCell(withReuseIdentifier: "myCustomCell", for: indexPath) as! CustomCell
-        sharedFunctionToConfigureCell(myCustomCell: myCustomCell, cellState: cellState, date: date)
-        return myCustomCell
     }
     
     func configureCalendar(_ calendar: JTAppleCalendarView) -> ConfigurationParameters {
@@ -48,24 +95,35 @@ extension ViewController: JTAppleCalendarViewDelegate, JTAppleCalendarViewDataSo
         let parameters = ConfigurationParameters(startDate: startDate, endDate: endDate)
         return parameters
     }
-  
-//        let myCustomCell = calendar.dequeueReusableJTAppleCell(withReuseIdentifier: "Custom_Cell", for: indexPath as! Custom_Cell)
-//        self.calendar(calendar, willDisplay: myCustomCell, forItemAt: date, cellState: cellState, indexPath: indexPath)
-//        myCustomCell.dateLabel.text = cellState.text
-//        return myCustomCell
-    func sharedFunctionToConfigureCell(myCustomCell: CustomCell, cellState: CellState, date: Date) {
-        myCustomCell.dateLabel.text = cellState.text
-//        if testCalendar.isDateInToday(date) {
-//            myCustomCell.backgroundColor = red
-//        } else {
-//            myCustomCell.backgroundColor = white
-//        }
-        // more code configurations
-        // ...
-        // ...
-        // ...
-    }
+    
 }
 
-
-
+extension ViewController: JTAppleCalendarViewDelegate {
+    
+    func calendar(_ calendar: JTAppleCalendarView, didScrollToDateSegmentWith visibleDates: DateSegmentInfo) {
+        setupViewsOfCalendar(from: visibleDates)
+    }
+    
+    func sharedFunctionToConfigureCell(myCustomCell: CustomCell, cellState: CellState, date: Date) {
+        myCustomCell.dateLabel.text = cellState.text
+    }
+    
+    func calendar(_ calendar: JTAppleCalendarView, cellForItemAt date: Date, cellState: CellState, indexPath: IndexPath) -> JTAppleCell {
+        let myCustomCell = calendar.dequeueReusableCell(withReuseIdentifier: "myCustomCell", for: indexPath) as! CustomCell
+        sharedFunctionToConfigureCell(myCustomCell: myCustomCell, cellState: cellState, date: date)
+        // myCustomCell.dateLabel.text = cellState.text
+        handleCellSelected(view: myCustomCell, cellState: cellState)
+        handleCellTextColor(view: myCustomCell, cellState: cellState)
+        return myCustomCell
+    }
+    
+    func calendar(_ calendar: JTAppleCalendarView, didSelectDate date: Date, cell: JTAppleCell?, cellState: CellState) {
+        handleCellSelected(view: cell, cellState: cellState)
+        handleCellTextColor(view: cell, cellState: cellState)
+    }
+    
+    func calendar(_ calendar: JTAppleCalendarView, didDeselectDate date: Date, cell: JTAppleCell?, cellState: CellState) {
+        handleCellSelected(view: cell, cellState: cellState)
+        handleCellTextColor(view: cell, cellState: cellState)
+    }
+}
