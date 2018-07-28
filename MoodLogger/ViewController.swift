@@ -17,8 +17,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var year: UILabel!
     @IBOutlet weak var month: UILabel!
     
-    let outsideMonthColor: UIColor = .red
-    let monthColor = UIColor(red: 165, green: 255, blue: 200, alpha: 1.0)
+    let outsideMonthColor: UIColor = .darkGray
+    let monthColor = UIColor(red: 100, green: 255, blue: 200, alpha: 1.0)
     let selectedMonthColor = UIColor.white
     let currentDateSelectedViewColor = UIColor(red: 100, green: 200, blue: 300, alpha: 1.0)
     
