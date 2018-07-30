@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  CalendarViewController.swift
 //  MoodLogger
 //
 //  Created by Justina Chen on 7/24/18.
@@ -10,8 +10,8 @@ import UIKit
 import JTAppleCalendar
 
 
-class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-    
+class CalendarViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+
     @IBOutlet weak var tableView: UITableView!
     
     let formatter = DateFormatter()
@@ -24,6 +24,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     let monthColor = UIColor(red: 100, green: 255, blue: 200, alpha: 1.0)
     let selectedMonthColor = UIColor.white
     let currentDateSelectedViewColor = UIColor(red: 100, green: 200, blue: 300, alpha: 1.0)
+
+    var moods = [Mood]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,14 +40,31 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return moods.count
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "moodTableViewCell", for: indexPath) as! MoodTableViewCell
         
-        cell.moodLabel.text = "mood"
-        cell.timestampLabel.text = "timestamp"
+        let mood = moods[indexPath.row]
+        cell.moodLabel.text = mood.title
+
+        cell.timestampLabel.text = mood.timestamp.convertToString()
+        
+        let formatter = DateFormatter()
+        // initially set the format based on your datepicker date / server String
+        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+
+        let myString = formatter.string(from: Date()) // string purpose I add here
+        // convert your string to date
+        let yourDate = formatter.date(from: myString)
+        //then again set the date format whhich type of output you need
+        formatter.dateFormat = "dd-MMM-yyyy"
+        // again convert your date to string
+        let myStringafd = formatter.string(from: yourDate!)
+
+        print(myStringafd)
         
         return cell
     }
@@ -100,7 +119,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
 }
 
-extension ViewController: JTAppleCalendarViewDataSource {
+extension CalendarViewController: JTAppleCalendarViewDataSource {
     func calendar(_ calendar: JTAppleCalendarView, willDisplay cell: JTAppleCell, forItemAt date: Date, cellState: CellState, indexPath: IndexPath) {
         let myCustomCell = cell as! CustomCell
         sharedFunctionToConfigureCell(myCustomCell: myCustomCell, cellState: cellState, date: date)
@@ -120,7 +139,7 @@ extension ViewController: JTAppleCalendarViewDataSource {
     
 }
 
-extension ViewController: JTAppleCalendarViewDelegate {
+extension CalendarViewController: JTAppleCalendarViewDelegate {
     
     func calendar(_ calendar: JTAppleCalendarView, didScrollToDateSegmentWith visibleDates: DateSegmentInfo) {
         setupViewsOfCalendar(from: visibleDates)
