@@ -10,7 +10,10 @@ import UIKit
 import JTAppleCalendar
 
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    
+    @IBOutlet weak var tableView: UITableView!
+    
     let formatter = DateFormatter()
     
     @IBOutlet weak var calendarView: JTAppleCalendarView!
@@ -26,6 +29,25 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         setupCalendarView()
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 10
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "moodTableViewCell", for: indexPath) as! MoodTableViewCell
+        
+        cell.moodLabel.text = "mood"
+        cell.timestampLabel.text = "timestamp"
+        
+        return cell
     }
     
     func setupCalendarView() {
@@ -126,4 +148,6 @@ extension ViewController: JTAppleCalendarViewDelegate {
         handleCellSelected(view: cell, cellState: cellState)
         handleCellTextColor(view: cell, cellState: cellState)
     }
+    
+    
 }
