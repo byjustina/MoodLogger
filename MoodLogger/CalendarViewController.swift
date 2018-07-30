@@ -11,7 +11,12 @@ import JTAppleCalendar
 
 
 class CalendarViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-
+    
+    var moods = [Mood]() {
+        didSet {
+            tableView.reloadData()
+        }
+    }
     @IBOutlet weak var tableView: UITableView!
     
     let formatter = DateFormatter()
@@ -25,8 +30,6 @@ class CalendarViewController: UIViewController, UITableViewDataSource, UITableVi
     let selectedMonthColor = UIColor.white
     let currentDateSelectedViewColor = UIColor(red: 100, green: 200, blue: 300, alpha: 1.0)
 
-    var moods = [Mood]()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -41,7 +44,6 @@ class CalendarViewController: UIViewController, UITableViewDataSource, UITableVi
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return moods.count
-        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -49,31 +51,14 @@ class CalendarViewController: UIViewController, UITableViewDataSource, UITableVi
         
         let mood = moods[indexPath.row]
         cell.moodLabel.text = mood.title
-
         cell.timestampLabel.text = mood.timestamp.convertToString()
-        
-        let formatter = DateFormatter()
-        // initially set the format based on your datepicker date / server String
-        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-
-        let myString = formatter.string(from: Date()) // string purpose I add here
-        // convert your string to date
-        let yourDate = formatter.date(from: myString)
-        //then again set the date format whhich type of output you need
-        formatter.dateFormat = "dd-MMM-yyyy"
-        // again convert your date to string
-        let myStringafd = formatter.string(from: yourDate!)
-
-        print(myStringafd)
-        
+ 
         return cell
     }
     
     func setupCalendarView() {
-        // Set up calendar spacing
         calendarView.minimumLineSpacing = 0
         calendarView.minimumInteritemSpacing = 0
-        // Set up labels
         calendarView.visibleDates { (visibleDates) in
             self.setupViewsOfCalendar(from: visibleDates)
         }
@@ -115,7 +100,6 @@ class CalendarViewController: UIViewController, UITableViewDataSource, UITableVi
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 }
 
@@ -152,7 +136,6 @@ extension CalendarViewController: JTAppleCalendarViewDelegate {
     func calendar(_ calendar: JTAppleCalendarView, cellForItemAt date: Date, cellState: CellState, indexPath: IndexPath) -> JTAppleCell {
         let myCustomCell = calendar.dequeueReusableCell(withReuseIdentifier: "myCustomCell", for: indexPath) as! CustomCell
         sharedFunctionToConfigureCell(myCustomCell: myCustomCell, cellState: cellState, date: date)
-        // myCustomCell.dateLabel.text = cellState.text
         handleCellSelected(view: myCustomCell, cellState: cellState)
         handleCellTextColor(view: myCustomCell, cellState: cellState)
         return myCustomCell

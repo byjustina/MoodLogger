@@ -17,6 +17,7 @@
 		733BF17D210F7802006E04A2 /* Mood.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733BF17C210F7802006E04A2 /* Mood.swift */; };
 		733BF17F210F93D7006E04A2 /* Date+convertToString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733BF17E210F93D7006E04A2 /* Date+convertToString.swift */; };
 		733BF181210F953B006E04A2 /* HomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733BF180210F953B006E04A2 /* HomeScreenViewController.swift */; };
+		733BF184210F9F6E006E04A2 /* NotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733BF183210F9F6E006E04A2 /* NotesViewController.swift */; };
 		73B52BDB210E58BB0050D87E /* MoodTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B52BDA210E58BB0050D87E /* MoodTableViewCell.swift */; };
 		73CFDB4F21091A1300F92DB1 /* Custom Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CFDB4E21091A1300F92DB1 /* Custom Cell.swift */; };
 		C9423370B4B16A9F18595CDC /* Pods_MoodLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0E550D3B41BDF42165B7CFF /* Pods_MoodLogger.framework */; };
@@ -35,6 +36,7 @@
 		733BF17C210F7802006E04A2 /* Mood.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mood.swift; sourceTree = "<group>"; };
 		733BF17E210F93D7006E04A2 /* Date+convertToString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+convertToString.swift"; sourceTree = "<group>"; };
 		733BF180210F953B006E04A2 /* HomeScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenViewController.swift; sourceTree = "<group>"; };
+		733BF183210F9F6E006E04A2 /* NotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesViewController.swift; sourceTree = "<group>"; };
 		73B52BDA210E58BB0050D87E /* MoodTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodTableViewCell.swift; sourceTree = "<group>"; };
 		73CFDB4E21091A1300F92DB1 /* Custom Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Custom Cell.swift"; sourceTree = "<group>"; };
 		918D9CBE1CAE59D7ADD23ECE /* Pods-MoodLogger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoodLogger.release.xcconfig"; path = "Pods/Target Support Files/Pods-MoodLogger/Pods-MoodLogger.release.xcconfig"; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 				731D67FC2107E76B00E987EA /* AppDelegate.swift */,
 				731D67FE2107E76B00E987EA /* CalendarViewController.swift */,
 				733BF180210F953B006E04A2 /* HomeScreenViewController.swift */,
+				733BF183210F9F6E006E04A2 /* NotesViewController.swift */,
 				731D68002107E76B00E987EA /* Main.storyboard */,
 				731D68062107E76C00E987EA /* Assets.xcassets */,
 				731D68082107E76C00E987EA /* LaunchScreen.storyboard */,
@@ -251,6 +254,7 @@
 				731D67FF2107E76B00E987EA /* CalendarViewController.swift in Sources */,
 				733BF17D210F7802006E04A2 /* Mood.swift in Sources */,
 				733BF181210F953B006E04A2 /* HomeScreenViewController.swift in Sources */,
+				733BF184210F9F6E006E04A2 /* NotesViewController.swift in Sources */,
 				731D68122107ECB700E987EA /* CoreDataHelper.swift in Sources */,
 				731D67FD2107E76B00E987EA /* AppDelegate.swift in Sources */,
 				73CFDB4F21091A1300F92DB1 /* Custom Cell.swift in Sources */,

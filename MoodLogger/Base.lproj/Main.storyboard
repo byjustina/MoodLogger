@@ -41,24 +41,36 @@
                                         <rect key="frame" x="0.0" y="0.0" width="46" height="30"/>
                                         <state key="normal" title="Button"/>
                                         <connections>
-                                            <segue destination="FQh-kh-7j0" kind="show" id="NKk-Lr-9pT"/>
+                                            <segue destination="FQh-kh-7j0" kind="show" identifier="" id="NKk-Lr-9pT"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hFi-MP-nQc">
                                         <rect key="frame" x="0.0" y="30" width="46" height="30"/>
                                         <state key="normal" title="Button"/>
+                                        <connections>
+                                            <segue destination="FQh-kh-7j0" kind="show" id="uNG-Ay-ppi"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jze-3k-ikT">
                                         <rect key="frame" x="0.0" y="60" width="46" height="30"/>
                                         <state key="normal" title="Button"/>
+                                        <connections>
+                                            <segue destination="FQh-kh-7j0" kind="show" id="3ik-ob-lFg"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7WO-dR-JgV">
                                         <rect key="frame" x="0.0" y="90" width="46" height="30"/>
                                         <state key="normal" title="Button"/>
+                                        <connections>
+                                            <segue destination="FQh-kh-7j0" kind="show" id="0CE-lc-ADQ"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QlZ-sd-GRc">
                                         <rect key="frame" x="0.0" y="120" width="46" height="30"/>
                                         <state key="normal" title="Button"/>
+                                        <connections>
+                                            <segue destination="FQh-kh-7j0" kind="show" id="3nI-XX-7uf"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -275,7 +287,7 @@
                                         <connections>
                                             <outlet property="moodLabel" destination="FWa-2a-dtK" id="Ktu-sW-aLk"/>
                                             <outlet property="timestampLabel" destination="KmZ-Wr-A9G" id="rGn-Kd-Uak"/>
-                                            <segue destination="FQh-kh-7j0" kind="show" id="F3v-1m-V6z"/>
+                                            <segue destination="FQh-kh-7j0" kind="show" identifier="editMoodNote" id="F3v-1m-V6z"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -298,7 +310,11 @@
                         <viewLayoutGuide key="safeArea" id="l0k-Ao-KmC"/>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="55U-lE-BEh">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="yjb-dU-raR"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="yjb-dU-raR">
+                            <connections>
+                                <segue destination="q2n-BV-C3m" kind="show" identifier="addMood" id="yRI-VT-6VH"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
@@ -312,10 +328,10 @@
             </objects>
             <point key="canvasLocation" x="3743.1999999999998" y="134.48275862068968"/>
         </scene>
-        <!--View Controller-->
+        <!--Notes View Controller-->
         <scene sceneID="uNB-JL-eOL">
             <objects>
-                <viewController id="FQh-kh-7j0" sceneMemberID="viewController">
+                <viewController id="FQh-kh-7j0" customClass="NotesViewController" customModule="MoodLogger" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0yg-Vc-mw5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -335,8 +351,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zsq-3F-Dxw">
-                                <rect key="frame" x="16" y="376" width="42" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="What do you want to change about today?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zsq-3F-Dxw">
+                                <rect key="frame" x="16" y="376" width="323" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -355,9 +371,16 @@
                         <viewLayoutGuide key="safeArea" id="3vD-eb-ucv"/>
                     </view>
                     <navigationItem key="navigationItem" id="bfr-Pn-EfU">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="4Ks-AJ-hO3"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="ij0-kC-1pf"/>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="changeAnswerView" destination="Jx0-sy-jFf" id="wIw-wK-QTh"/>
+                        <outlet property="changeQuestionLabel" destination="zsq-3F-Dxw" id="uDc-5z-vQj"/>
+                        <outlet property="didAnswerView" destination="4s4-yc-ulw" id="Wlz-YI-42i"/>
+                        <outlet property="didQuestionLabel" destination="SLa-Jv-QT9" id="4xp-5z-ZI4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2mr-Sk-gwX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -383,6 +406,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="F3v-1m-V6z"/>
+        <segue reference="lFJ-6r-ddR"/>
+        <segue reference="NKk-Lr-9pT"/>
+        <segue reference="yRI-VT-6VH"/>
     </inferredMetricsTieBreakers>
 </document>
