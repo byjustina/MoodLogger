@@ -87,10 +87,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let date = visibleDates.monthDates.first!.date
         
         self.formatter.dateFormat = "yyyy"
-        self.year.text = self.formatter.string(from: date)
+        self.year.text = "   " + self.formatter.string(from: date)
         
         self.formatter.dateFormat = "MMMM"
-        self.month.text = self.formatter.string(from: date)
+        self.month.text = "   " + self.formatter.string(from: date)
         
     }
     
