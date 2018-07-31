@@ -30,13 +30,13 @@ class NotesViewController: UIViewController {
 
         switch identifier {
         case "save":
-//            let mood = Mood()
-//            mood.title = didAnswerView.text ?? ""
-//            mood.content = changeAnswerView.text ?? ""
-//            mood.timestamp = Date()
+            let mood = Mood()
+            mood.title = didAnswerView.text ?? ""
+            mood.content = changeAnswerView.text ?? ""
+            mood.timestamp = Date()
 
-//            let destination = segue.destination as! CalendarViewController
-//            destination.moods.append(mood)
+            let destination = segue.destination as! CalendarViewController
+            destination.moods.append(mood)
             
             print("save bar button item tapped")
         
@@ -54,4 +54,5 @@ class NotesViewController: UIViewController {
     @IBOutlet weak var didAnswerView: UITextView!
     @IBOutlet weak var changeQuestionLabel: UILabel!
     @IBOutlet weak var changeAnswerView: UITextView!
+
 }

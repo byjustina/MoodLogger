@@ -287,7 +287,6 @@
                                         <connections>
                                             <outlet property="moodLabel" destination="FWa-2a-dtK" id="Ktu-sW-aLk"/>
                                             <outlet property="timestampLabel" destination="KmZ-Wr-A9G" id="rGn-Kd-Uak"/>
-                                            <segue destination="FQh-kh-7j0" kind="show" identifier="editMoodNote" id="F3v-1m-V6z"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -347,8 +346,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="What do you want to change about today?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zsq-3F-Dxw">
-                                <rect key="frame" x="16" y="376" width="323" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Question" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zsq-3F-Dxw">
+                                <rect key="frame" x="16" y="376" width="69" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -367,11 +366,7 @@
                         <viewLayoutGuide key="safeArea" id="3vD-eb-ucv"/>
                     </view>
                     <navigationItem key="navigationItem" id="bfr-Pn-EfU">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="4Ks-AJ-hO3">
-                            <connections>
-                                <segue destination="Yjf-XI-CGt" kind="unwind" identifier="cancel" unwindAction="unwindWithSegue:" id="ies-dF-oj9"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="4Ks-AJ-hO3"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="ij0-kC-1pf">
                             <connections>
                                 <segue destination="Vj0-oL-QyX" kind="show" id="3RF-hL-WBB"/>
@@ -387,7 +382,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2mr-Sk-gwX" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="Yjf-XI-CGt" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2829.5999999999999" y="957.57121439280365"/>
         </scene>
@@ -411,7 +405,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="F3v-1m-V6z"/>
-        <segue reference="3RF-hL-WBB"/>
+        <segue reference="0CE-lc-ADQ"/>
+        <segue reference="lFJ-6r-ddR"/>
     </inferredMetricsTieBreakers>
 </document>

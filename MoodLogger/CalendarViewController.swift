@@ -34,7 +34,7 @@ class CalendarViewController: UIViewController, UITableViewDataSource, UITableVi
         super.viewDidLoad()
         
         setupCalendarView()
-        
+        moods = CoreDataHelper.retrieveMoods()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -51,9 +51,10 @@ class CalendarViewController: UIViewController, UITableViewDataSource, UITableVi
         
         let mood = moods[indexPath.row]
         cell.moodLabel.text = mood.title
-        cell.timestampLabel.text = mood.timestamp.convertToString()
- 
+        cell.timestampLabel.text = mood.timestamp?.convertToString() ?? "unknown"
+        
         return cell
+        
     }
     
     func setupCalendarView() {
@@ -150,6 +151,12 @@ extension CalendarViewController: JTAppleCalendarViewDelegate {
         handleCellSelected(view: cell, cellState: cellState)
         handleCellTextColor(view: cell, cellState: cellState)
     }
+    
+//    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+//        if editingStyle == .delete {
+//            moods.remove(at: indexPath.row)
+//        }
+//    }
     
     
 }
