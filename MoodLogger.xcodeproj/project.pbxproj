@@ -19,6 +19,19 @@
 		733BF184210F9F6E006E04A2 /* NotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733BF183210F9F6E006E04A2 /* NotesViewController.swift */; };
 		73A7E230211114F500DE8CDB /* AceSans-Demo.otf in Resources */ = {isa = PBXBuildFile; fileRef = 73A7E22F211114F500DE8CDB /* AceSans-Demo.otf */; };
 		73A7E2322111150100DE8CDB /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 73A7E2312111150000DE8CDB /* Roboto-Thin.ttf */; };
+		73A7E23421111CE200DE8CDB /* Roboto-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 73A7E23321111CE100DE8CDB /* Roboto-Light.ttf */; };
+		73A7E23621111CEE00DE8CDB /* Roboto-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 73A7E23521111CED00DE8CDB /* Roboto-Black.ttf */; };
+		73A7E23821111CFA00DE8CDB /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 73A7E23721111CF800DE8CDB /* Roboto-Bold.ttf */; };
+		73A7E23A21111D0500DE8CDB /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 73A7E23921111D0300DE8CDB /* Roboto-Medium.ttf */; };
+		73A7E23C21111F4B00DE8CDB /* GeosansLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 73A7E23B21111F4A00DE8CDB /* GeosansLight.ttf */; };
+		73A7E23E21111F5600DE8CDB /* The Brooklyn Smooth.otf in Resources */ = {isa = PBXBuildFile; fileRef = 73A7E23D21111F5500DE8CDB /* The Brooklyn Smooth.otf */; };
+		73A7E24021111F6200DE8CDB /* The Brooklyn Smooth Bold Demo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 73A7E23F21111F6100DE8CDB /* The Brooklyn Smooth Bold Demo.ttf */; };
+		73A7E24221111F6C00DE8CDB /* LANENAR_.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 73A7E24121111F6B00DE8CDB /* LANENAR_.ttf */; };
+		73A7E24421111F8F00DE8CDB /* Champagne & Limousines.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 73A7E24321111F8E00DE8CDB /* Champagne & Limousines.ttf */; };
+		73A7E24621111F9700DE8CDB /* Champagne & Limousines Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 73A7E24521111F9600DE8CDB /* Champagne & Limousines Bold.ttf */; };
+		73A7E24821111FA200DE8CDB /* CaviarDreams.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 73A7E24721111FA100DE8CDB /* CaviarDreams.ttf */; };
+		73A7E24A21111FAC00DE8CDB /* CaviarDreams_Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 73A7E24921111FAB00DE8CDB /* CaviarDreams_Bold.ttf */; };
+		73A7E24C21111FB700DE8CDB /* Banks&MilesSingleLine.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 73A7E24B21111FB600DE8CDB /* Banks&MilesSingleLine.ttf */; };
 		73B52BDB210E58BB0050D87E /* MoodTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B52BDA210E58BB0050D87E /* MoodTableViewCell.swift */; };
 		73CFDB4F21091A1300F92DB1 /* Custom Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CFDB4E21091A1300F92DB1 /* Custom Cell.swift */; };
 		C9423370B4B16A9F18595CDC /* Pods_MoodLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0E550D3B41BDF42165B7CFF /* Pods_MoodLogger.framework */; };
@@ -39,6 +52,19 @@
 		733BF183210F9F6E006E04A2 /* NotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesViewController.swift; sourceTree = "<group>"; };
 		73A7E22F211114F500DE8CDB /* AceSans-Demo.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AceSans-Demo.otf"; sourceTree = "<group>"; };
 		73A7E2312111150000DE8CDB /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Thin.ttf"; sourceTree = "<group>"; };
+		73A7E23321111CE100DE8CDB /* Roboto-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Light.ttf"; sourceTree = "<group>"; };
+		73A7E23521111CED00DE8CDB /* Roboto-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Black.ttf"; sourceTree = "<group>"; };
+		73A7E23721111CF800DE8CDB /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
+		73A7E23921111D0300DE8CDB /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
+		73A7E23B21111F4A00DE8CDB /* GeosansLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GeosansLight.ttf; sourceTree = "<group>"; };
+		73A7E23D21111F5500DE8CDB /* The Brooklyn Smooth.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "The Brooklyn Smooth.otf"; sourceTree = "<group>"; };
+		73A7E23F21111F6100DE8CDB /* The Brooklyn Smooth Bold Demo.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "The Brooklyn Smooth Bold Demo.ttf"; sourceTree = "<group>"; };
+		73A7E24121111F6B00DE8CDB /* LANENAR_.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = LANENAR_.ttf; sourceTree = "<group>"; };
+		73A7E24321111F8E00DE8CDB /* Champagne & Limousines.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Champagne & Limousines.ttf"; sourceTree = "<group>"; };
+		73A7E24521111F9600DE8CDB /* Champagne & Limousines Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Champagne & Limousines Bold.ttf"; sourceTree = "<group>"; };
+		73A7E24721111FA100DE8CDB /* CaviarDreams.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = CaviarDreams.ttf; sourceTree = "<group>"; };
+		73A7E24921111FAB00DE8CDB /* CaviarDreams_Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = CaviarDreams_Bold.ttf; sourceTree = "<group>"; };
+		73A7E24B21111FB600DE8CDB /* Banks&MilesSingleLine.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Banks&MilesSingleLine.ttf"; sourceTree = "<group>"; };
 		73B52BDA210E58BB0050D87E /* MoodTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodTableViewCell.swift; sourceTree = "<group>"; };
 		73CFDB4E21091A1300F92DB1 /* Custom Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Custom Cell.swift"; sourceTree = "<group>"; };
 		918D9CBE1CAE59D7ADD23ECE /* Pods-MoodLogger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoodLogger.release.xcconfig"; path = "Pods/Target Support Files/Pods-MoodLogger/Pods-MoodLogger.release.xcconfig"; sourceTree = "<group>"; };
@@ -63,6 +89,19 @@
 			children = (
 				73A7E22F211114F500DE8CDB /* AceSans-Demo.otf */,
 				73A7E2312111150000DE8CDB /* Roboto-Thin.ttf */,
+				73A7E23521111CED00DE8CDB /* Roboto-Black.ttf */,
+				73A7E23321111CE100DE8CDB /* Roboto-Light.ttf */,
+				73A7E23721111CF800DE8CDB /* Roboto-Bold.ttf */,
+				73A7E23921111D0300DE8CDB /* Roboto-Medium.ttf */,
+				73A7E23B21111F4A00DE8CDB /* GeosansLight.ttf */,
+				73A7E23D21111F5500DE8CDB /* The Brooklyn Smooth.otf */,
+				73A7E23F21111F6100DE8CDB /* The Brooklyn Smooth Bold Demo.ttf */,
+				73A7E24121111F6B00DE8CDB /* LANENAR_.ttf */,
+				73A7E24321111F8E00DE8CDB /* Champagne & Limousines.ttf */,
+				73A7E24521111F9600DE8CDB /* Champagne & Limousines Bold.ttf */,
+				73A7E24721111FA100DE8CDB /* CaviarDreams.ttf */,
+				73A7E24921111FAB00DE8CDB /* CaviarDreams_Bold.ttf */,
+				73A7E24B21111FB600DE8CDB /* Banks&MilesSingleLine.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -207,11 +246,24 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				73A7E24C21111FB700DE8CDB /* Banks&MilesSingleLine.ttf in Resources */,
 				731D680A2107E76C00E987EA /* LaunchScreen.storyboard in Resources */,
 				731D68072107E76C00E987EA /* Assets.xcassets in Resources */,
+				73A7E24021111F6200DE8CDB /* The Brooklyn Smooth Bold Demo.ttf in Resources */,
+				73A7E24221111F6C00DE8CDB /* LANENAR_.ttf in Resources */,
+				73A7E24421111F8F00DE8CDB /* Champagne & Limousines.ttf in Resources */,
+				73A7E23C21111F4B00DE8CDB /* GeosansLight.ttf in Resources */,
+				73A7E23421111CE200DE8CDB /* Roboto-Light.ttf in Resources */,
 				731D68022107E76B00E987EA /* Main.storyboard in Resources */,
+				73A7E23621111CEE00DE8CDB /* Roboto-Black.ttf in Resources */,
+				73A7E23E21111F5600DE8CDB /* The Brooklyn Smooth.otf in Resources */,
+				73A7E24621111F9700DE8CDB /* Champagne & Limousines Bold.ttf in Resources */,
 				73A7E2322111150100DE8CDB /* Roboto-Thin.ttf in Resources */,
+				73A7E23821111CFA00DE8CDB /* Roboto-Bold.ttf in Resources */,
 				73A7E230211114F500DE8CDB /* AceSans-Demo.otf in Resources */,
+				73A7E24A21111FAC00DE8CDB /* CaviarDreams_Bold.ttf in Resources */,
+				73A7E24821111FA200DE8CDB /* CaviarDreams.ttf in Resources */,
+				73A7E23A21111D0500DE8CDB /* Roboto-Medium.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
