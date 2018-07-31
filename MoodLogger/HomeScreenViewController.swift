@@ -31,4 +31,31 @@ class HomeScreenViewController: UIViewController {
     @IBAction func unwindWithSegue(_ segue: UIStoryboardSegue) {
         
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let identifier = segue.identifier else { return }
+        
+        switch identifier {
+        case "displayNote":
+            print("Transitioning to the Display Note View Controller")
+        case "showCalendar":
+            print("Transitioning to the Calendar View Controller")
+        default:
+            print("unexpected segue identifier")
+
+        }
+    }
+    
+    @IBOutlet weak var introLabel: UILabel!
+    @IBOutlet weak var datePicker: UIDatePicker!
+    @IBOutlet weak var amazingButton: UIButton!
+    @IBOutlet weak var goodButton: UIButton!
+    @IBOutlet weak var neutralButton: UIButton!
+
+    @IBOutlet weak var badButton: UIButton!
+
+    @IBOutlet weak var terribleButton: UIButton!
+
+    @IBOutlet weak var calendarButton: UIButton!
+
 }

@@ -17,6 +17,8 @@
 		733BF17F210F93D7006E04A2 /* Date+convertToString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733BF17E210F93D7006E04A2 /* Date+convertToString.swift */; };
 		733BF181210F953B006E04A2 /* HomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733BF180210F953B006E04A2 /* HomeScreenViewController.swift */; };
 		733BF184210F9F6E006E04A2 /* NotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733BF183210F9F6E006E04A2 /* NotesViewController.swift */; };
+		73A7E230211114F500DE8CDB /* AceSans-Demo.otf in Resources */ = {isa = PBXBuildFile; fileRef = 73A7E22F211114F500DE8CDB /* AceSans-Demo.otf */; };
+		73A7E2322111150100DE8CDB /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 73A7E2312111150000DE8CDB /* Roboto-Thin.ttf */; };
 		73B52BDB210E58BB0050D87E /* MoodTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B52BDA210E58BB0050D87E /* MoodTableViewCell.swift */; };
 		73CFDB4F21091A1300F92DB1 /* Custom Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CFDB4E21091A1300F92DB1 /* Custom Cell.swift */; };
 		C9423370B4B16A9F18595CDC /* Pods_MoodLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0E550D3B41BDF42165B7CFF /* Pods_MoodLogger.framework */; };
@@ -35,6 +37,8 @@
 		733BF17E210F93D7006E04A2 /* Date+convertToString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+convertToString.swift"; sourceTree = "<group>"; };
 		733BF180210F953B006E04A2 /* HomeScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenViewController.swift; sourceTree = "<group>"; };
 		733BF183210F9F6E006E04A2 /* NotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesViewController.swift; sourceTree = "<group>"; };
+		73A7E22F211114F500DE8CDB /* AceSans-Demo.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AceSans-Demo.otf"; sourceTree = "<group>"; };
+		73A7E2312111150000DE8CDB /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Thin.ttf"; sourceTree = "<group>"; };
 		73B52BDA210E58BB0050D87E /* MoodTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodTableViewCell.swift; sourceTree = "<group>"; };
 		73CFDB4E21091A1300F92DB1 /* Custom Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Custom Cell.swift"; sourceTree = "<group>"; };
 		918D9CBE1CAE59D7ADD23ECE /* Pods-MoodLogger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoodLogger.release.xcconfig"; path = "Pods/Target Support Files/Pods-MoodLogger/Pods-MoodLogger.release.xcconfig"; sourceTree = "<group>"; };
@@ -54,6 +58,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		731756ED2111148A00FFC517 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				73A7E22F211114F500DE8CDB /* AceSans-Demo.otf */,
+				73A7E2312111150000DE8CDB /* Roboto-Thin.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		731D67F02107E76B00E987EA = {
 			isa = PBXGroup;
 			children = (
@@ -89,6 +102,7 @@
 				733BF182210F95F6006E04A2 /* Extensions */,
 				733BF179210F7774006E04A2 /* Models */,
 				733BF178210F775E006E04A2 /* Views */,
+				731756ED2111148A00FFC517 /* Fonts */,
 			);
 			path = MoodLogger;
 			sourceTree = "<group>";
@@ -196,6 +210,8 @@
 				731D680A2107E76C00E987EA /* LaunchScreen.storyboard in Resources */,
 				731D68072107E76C00E987EA /* Assets.xcassets in Resources */,
 				731D68022107E76B00E987EA /* Main.storyboard in Resources */,
+				73A7E2322111150100DE8CDB /* Roboto-Thin.ttf in Resources */,
+				73A7E230211114F500DE8CDB /* AceSans-Demo.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
