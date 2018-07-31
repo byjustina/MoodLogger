@@ -30,14 +30,21 @@ class NotesViewController: UIViewController {
 
         switch identifier {
         case "save":
-            let mood = Mood()
-            mood.title = didAnswerView.text ?? ""
-            mood.content = changeAnswerView.text ?? ""
-            mood.timestamp = Date()
+//            let mood = Mood()
+//            mood.title = didAnswerView.text ?? ""
+//            mood.content = changeAnswerView.text ?? ""
+//            mood.timestamp = Date()
 
-            let destination = segue.destination as! CalendarViewController
-            destination.moods.append(mood)
+//            let destination = segue.destination as! CalendarViewController
+//            destination.moods.append(mood)
+            
+            print("save bar button item tapped")
+        
 
+        case "cancel":
+            print("cancel bar button item tapped")
+            
+            
         default:
             print("unexpected segue identifier")
         }
