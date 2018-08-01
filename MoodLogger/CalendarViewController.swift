@@ -12,11 +12,9 @@ import JTAppleCalendar
 
 class CalendarViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    var moods = [Mood]() {
-        didSet {
-            tableView.reloadData()
-        }
-    }
+    var moods = [Mood]()
+        
+        
     @IBOutlet weak var tableView: UITableView!
     
     let formatter = DateFormatter()
@@ -26,12 +24,15 @@ class CalendarViewController: UIViewController, UITableViewDataSource, UITableVi
     @IBOutlet weak var month: UILabel!
     
     let outsideMonthColor: UIColor = .darkGray
-    let monthColor = UIColor(red: 100, green: 255, blue: 200, alpha: 1.0)
+    let monthColor = UIColor(red: 100/255, green: 255/255, blue: 200/255, alpha: 1.0)
     let selectedMonthColor = UIColor.white
-    let currentDateSelectedViewColor = UIColor(red: 100, green: 200, blue: 300, alpha: 1.0)
+    let currentDateSelectedViewColor = UIColor(red: 100/255, green: 200/255, blue: 300/255, alpha: 1.0)
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        //existing
+        tableView.delegate = self
+        tableView.dataSource = self
         
         setupCalendarView()
         moods = CoreDataHelper.retrieveMoods()

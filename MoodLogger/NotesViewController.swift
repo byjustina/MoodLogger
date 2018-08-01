@@ -28,7 +28,8 @@ class NotesViewController: UIViewController {
         
         switch identifier {
         case "save":
-            let mood = Mood()
+//            let mood = Mood()
+            let mood = CoreDataHelper.newMood()
             mood.title = didAnswerView.text ?? ""
             mood.content = changeAnswerView.text ?? ""
             mood.timestamp = Date()

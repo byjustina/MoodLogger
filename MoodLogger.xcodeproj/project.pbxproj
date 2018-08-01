@@ -139,7 +139,6 @@
 				731D68112107ECB700E987EA /* CoreDataHelper.swift */,
 				73CFDB4E21091A1300F92DB1 /* Custom Cell.swift */,
 				733BF182210F95F6006E04A2 /* Extensions */,
-				733BF179210F7774006E04A2 /* Models */,
 				733BF178210F775E006E04A2 /* Views */,
 				731756ED2111148A00FFC517 /* Fonts */,
 			);
@@ -152,13 +151,6 @@
 				73B52BDA210E58BB0050D87E /* MoodTableViewCell.swift */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		733BF179210F7774006E04A2 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		733BF182210F95F6006E04A2 /* Extensions */ = {
