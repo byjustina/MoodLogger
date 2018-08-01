@@ -21,6 +21,14 @@ extension Entry {
             switch string {
             case Moods.Amazing.stringValue:
                 return Moods.Amazing
+            case Moods.Good.stringValue:
+                return Moods.Good
+            case Moods.Neutral.stringValue:
+                return Moods.Neutral
+            case Moods.Bad.stringValue:
+                return Moods.Bad
+            case Moods.Terrible.stringValue:
+                return Moods.Terrible
             default:
                 return nil
             }
@@ -56,10 +64,5 @@ extension Entry {
             
            return moodFromValue
         }
-    }
-    
-    func hi() {
-        print(Entry().mood)
-        Entry().mood = .Amazing
     }
 }
