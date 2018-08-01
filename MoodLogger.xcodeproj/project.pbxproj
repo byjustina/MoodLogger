@@ -17,6 +17,8 @@
 		733BF17F210F93D7006E04A2 /* Date+convertToString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733BF17E210F93D7006E04A2 /* Date+convertToString.swift */; };
 		733BF181210F953B006E04A2 /* HomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733BF180210F953B006E04A2 /* HomeScreenViewController.swift */; };
 		733BF184210F9F6E006E04A2 /* NotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733BF183210F9F6E006E04A2 /* NotesViewController.swift */; };
+		7378B803211227D10055ED1B /* calendar.png in Resources */ = {isa = PBXBuildFile; fileRef = 7378B802211227D00055ED1B /* calendar.png */; };
+		7378B806211231F00055ED1B /* Entry+Moods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7378B805211231F00055ED1B /* Entry+Moods.swift */; };
 		73A7E230211114F500DE8CDB /* AceSans-Demo.otf in Resources */ = {isa = PBXBuildFile; fileRef = 73A7E22F211114F500DE8CDB /* AceSans-Demo.otf */; };
 		73A7E2322111150100DE8CDB /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 73A7E2312111150000DE8CDB /* Roboto-Thin.ttf */; };
 		73A7E23421111CE200DE8CDB /* Roboto-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 73A7E23321111CE100DE8CDB /* Roboto-Light.ttf */; };
@@ -50,6 +52,8 @@
 		733BF17E210F93D7006E04A2 /* Date+convertToString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+convertToString.swift"; sourceTree = "<group>"; };
 		733BF180210F953B006E04A2 /* HomeScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenViewController.swift; sourceTree = "<group>"; };
 		733BF183210F9F6E006E04A2 /* NotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesViewController.swift; sourceTree = "<group>"; };
+		7378B802211227D00055ED1B /* calendar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = calendar.png; sourceTree = "<group>"; };
+		7378B805211231F00055ED1B /* Entry+Moods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Entry+Moods.swift"; sourceTree = "<group>"; };
 		73A7E22F211114F500DE8CDB /* AceSans-Demo.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AceSans-Demo.otf"; sourceTree = "<group>"; };
 		73A7E2312111150000DE8CDB /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Thin.ttf"; sourceTree = "<group>"; };
 		73A7E23321111CE100DE8CDB /* Roboto-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Light.ttf"; sourceTree = "<group>"; };
@@ -132,12 +136,14 @@
 				733BF180210F953B006E04A2 /* HomeScreenViewController.swift */,
 				733BF183210F9F6E006E04A2 /* NotesViewController.swift */,
 				731D68002107E76B00E987EA /* Main.storyboard */,
+				7378B802211227D00055ED1B /* calendar.png */,
 				731D68062107E76C00E987EA /* Assets.xcassets */,
 				731D68082107E76C00E987EA /* LaunchScreen.storyboard */,
 				731D680B2107E76C00E987EA /* Info.plist */,
 				731D68032107E76B00E987EA /* MoodLogger.xcdatamodeld */,
 				731D68112107ECB700E987EA /* CoreDataHelper.swift */,
 				73CFDB4E21091A1300F92DB1 /* Custom Cell.swift */,
+				7378B804211231CD0055ED1B /* Models */,
 				733BF182210F95F6006E04A2 /* Extensions */,
 				733BF178210F775E006E04A2 /* Views */,
 				731756ED2111148A00FFC517 /* Fonts */,
@@ -159,6 +165,14 @@
 				733BF17E210F93D7006E04A2 /* Date+convertToString.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		7378B804211231CD0055ED1B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				7378B805211231F00055ED1B /* Entry+Moods.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		B1CC1047E62F0BD454556805 /* Frameworks */ = {
@@ -242,6 +256,7 @@
 				731D680A2107E76C00E987EA /* LaunchScreen.storyboard in Resources */,
 				731D68072107E76C00E987EA /* Assets.xcassets in Resources */,
 				73A7E24021111F6200DE8CDB /* The Brooklyn Smooth Bold Demo.ttf in Resources */,
+				7378B803211227D10055ED1B /* calendar.png in Resources */,
 				73A7E24221111F6C00DE8CDB /* LANENAR_.ttf in Resources */,
 				73A7E24421111F8F00DE8CDB /* Champagne & Limousines.ttf in Resources */,
 				73A7E23C21111F4B00DE8CDB /* GeosansLight.ttf in Resources */,
@@ -312,6 +327,7 @@
 				733BF181210F953B006E04A2 /* HomeScreenViewController.swift in Sources */,
 				733BF184210F9F6E006E04A2 /* NotesViewController.swift in Sources */,
 				731D68122107ECB700E987EA /* CoreDataHelper.swift in Sources */,
+				7378B806211231F00055ED1B /* Entry+Moods.swift in Sources */,
 				731D67FD2107E76B00E987EA /* AppDelegate.swift in Sources */,
 				73CFDB4F21091A1300F92DB1 /* Custom Cell.swift in Sources */,
 			);

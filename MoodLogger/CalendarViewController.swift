@@ -12,7 +12,7 @@ import JTAppleCalendar
 
 class CalendarViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    var moods = [Mood]()
+    var moods = [Entry]()
         
     @IBOutlet weak var tableView: UITableView!
     
@@ -50,7 +50,7 @@ class CalendarViewController: UIViewController, UITableViewDataSource, UITableVi
         let cell = tableView.dequeueReusableCell(withIdentifier: "moodTableViewCell", for: indexPath) as! MoodTableViewCell
         
         let mood = moods[indexPath.row]
-        cell.moodLabel.text = mood.title
+        cell.moodLabel.text = mood.mood.stringValue
         cell.timestampLabel.text = mood.timestamp?.convertToString() ?? "unknown"
         
         return cell

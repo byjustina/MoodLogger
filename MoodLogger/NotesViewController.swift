@@ -10,7 +10,7 @@ import UIKit
 
 class NotesViewController: UIViewController {
     
-   var mood: Mood?
+   var mood: Entry?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,8 +20,8 @@ class NotesViewController: UIViewController {
         super.viewWillAppear(animated)
     
         if let mood = mood {
-            didAnswerView.text = mood.title
-            changeAnswerView.text = mood.content
+            didAnswerView.text = mood.mood.stringValue
+            changeAnswerView.text = mood.answer2
         } else {
             didAnswerView.text = ""
             changeAnswerView.text = ""
@@ -33,16 +33,16 @@ class NotesViewController: UIViewController {
         
         switch identifier {
         case "save" where mood != nil:
-            mood?.title = didAnswerView.text ?? ""
-            mood?.content = changeAnswerView.text ?? ""
+            mood?.answer1 = didAnswerView.text ?? ""
+            mood?.answer2 = changeAnswerView.text ?? ""
             mood?.timestamp = Date()
-
+            
             CoreDataHelper.saveMood()
             
         case "save" where mood == nil:
             let mood = CoreDataHelper.newMood()
-            mood.title = didAnswerView.text ?? ""
-            mood.content = changeAnswerView.text ?? ""
+            mood.answer1 = didAnswerView.text ?? ""
+            mood.answer2 = changeAnswerView.text ?? ""
             mood.timestamp = Date()
             
             CoreDataHelper.saveMood()

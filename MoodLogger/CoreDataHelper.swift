@@ -23,8 +23,8 @@ struct CoreDataHelper {
         return context
     }()
     
-    static func newMood() -> Mood {
-        let mood = NSEntityDescription.insertNewObject(forEntityName: "Mood", into: context) as! Mood
+    static func newMood() -> Entry {
+        let mood = NSEntityDescription.insertNewObject(forEntityName: "Entry", into: context) as! Entry
         return mood
     }
     
@@ -36,14 +36,14 @@ struct CoreDataHelper {
         }
     }
     
-   static func delete(mood: Mood) {
+   static func delete(mood: Entry) {
         context.delete(mood)
         saveMood()
     }
     
-    static func retrieveMoods() -> [Mood] {
+    static func retrieveMoods() -> [Entry] {
         do {
-            let fetchRequest = NSFetchRequest<Mood>(entityName: "Mood")
+            let fetchRequest = NSFetchRequest<Entry>(entityName: "Entry")
             let results = try context.fetch(fetchRequest)
             
             return results

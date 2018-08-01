@@ -10,7 +10,7 @@ import UIKit
 
 class HomeScreenViewController: UIViewController {
     
-    var moods = [Mood]()
+    var moods = [Entry]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,10 +37,37 @@ class HomeScreenViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let identifier = segue.identifier else { return }
         
-        switch identifier {
-        case "displayNote":
-            print("Transitioning to the Display Note View Controller")
+        //showing calendar?
+        if identifier == "showCalendar" {
             
+        } else {
+            //addding a new Entry
+            
+            
+            
+            //create a newEntry from CoreDataHelper.newEntry()
+            
+            
+            //get the selected mood and turn it into a Entry.Moods value
+            
+            
+            //update the newEntry values: timestamp, mood
+            
+            
+        }
+        
+        
+        switch identifier {
+        case "amazing":
+            break
+        case "good":
+            break
+        case "neutral":
+            break
+        case "bad":
+            break
+        case "terrible":
+            break
         case "showCalendar":
             print("Transitioning to the Calendar View Controller")
             
@@ -61,4 +88,7 @@ class HomeScreenViewController: UIViewController {
 
     @IBOutlet weak var calendarButton: UIButton!
 
+//    let btnImage = UIImage(named: "image")
+//    btnTwo.setImage(btnImage , for: UIControlState.normal)
+    
 }
