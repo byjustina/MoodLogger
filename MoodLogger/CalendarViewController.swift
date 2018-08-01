@@ -14,7 +14,6 @@ class CalendarViewController: UIViewController, UITableViewDataSource, UITableVi
     
     var moods = [Mood]()
         
-        
     @IBOutlet weak var tableView: UITableView!
     
     let formatter = DateFormatter()
@@ -154,9 +153,11 @@ extension CalendarViewController: JTAppleCalendarViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            moods.remove(at: indexPath.row)
-        }
+        let moodToDelete = moods[indexPath.row]
+        CoreDataHelper.delete(mood: moodToDelete)
+    
+        moods = CoreDataHelper.retrieveMoods()
+        tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.automatic)
     }
     
 }

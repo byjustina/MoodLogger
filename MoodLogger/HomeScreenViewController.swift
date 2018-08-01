@@ -9,6 +9,8 @@
 import UIKit
 
 class HomeScreenViewController: UIViewController {
+    
+    var moods = [Mood]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +31,7 @@ class HomeScreenViewController: UIViewController {
     }
 
     @IBAction func unwindWithSegue(_ segue: UIStoryboardSegue) {
-        
+        moods = CoreDataHelper.retrieveMoods()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -38,11 +40,12 @@ class HomeScreenViewController: UIViewController {
         switch identifier {
         case "displayNote":
             print("Transitioning to the Display Note View Controller")
+            
         case "showCalendar":
             print("Transitioning to the Calendar View Controller")
+            
         default:
             print("unexpected segue identifier")
-
         }
     }
     
