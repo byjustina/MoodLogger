@@ -41,7 +41,7 @@ struct CoreDataHelper {
         saveEntry()
     }
     
-    static func retrieveMoods() -> [Entry] {
+    static func retrieveEntry() -> [Entry] {
         do {
             let fetchRequest = NSFetchRequest<Entry>(entityName: "Entry")
             let results = try context.fetch(fetchRequest)

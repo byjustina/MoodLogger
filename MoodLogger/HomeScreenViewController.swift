@@ -31,7 +31,7 @@ class HomeScreenViewController: UIViewController {
     }
 
     @IBAction func unwindToHomescreen(_ segue: UIStoryboardSegue) {
-        moods = CoreDataHelper.retrieveMoods()
+        moods = CoreDataHelper.retrieveEntry()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

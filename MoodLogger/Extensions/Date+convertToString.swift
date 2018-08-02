@@ -10,12 +10,21 @@ import Foundation
 
 extension Date {
     func convertToString() -> String {
+        return DateFormatter.localizedString(from: self, dateStyle: DateFormatter.Style.medium, timeStyle: .none)
+    }
+    
+    func convertToStringWithTime() -> String {
         return DateFormatter.localizedString(from: self, dateStyle: DateFormatter.Style.medium, timeStyle: DateFormatter.Style.medium)
     }
 }
 
 extension NSDate {
-    func convertToString() -> String {
+    func convertToStringWithTime() -> String {
         return DateFormatter.localizedString(from: (self as Date), dateStyle: DateFormatter.Style.medium, timeStyle: DateFormatter.Style.medium)
     }
+    
+    func convertToString() -> String {
+        return DateFormatter.localizedString(from: (self as Date), dateStyle: DateFormatter.Style.medium, timeStyle: .none)
+    }
+    
 }

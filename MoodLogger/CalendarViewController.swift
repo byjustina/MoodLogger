@@ -13,7 +13,7 @@ import JTAppleCalendar
 class CalendarViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     var moods = [Entry]()
-    //var date: String?
+    var date: String?
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -35,25 +35,25 @@ class CalendarViewController: UIViewController, UITableViewDataSource, UITableVi
         tableView.dataSource = self
         
         setupCalendarView()
-        moods = CoreDataHelper.retrieveMoods()
+        moods = CoreDataHelper.retrieveEntry()
         
     }
     
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        moods = CoreDataHelper.retrieveMoods()
+        moods = CoreDataHelper.retrieveEntry()
         tableView.reloadData()
     }
     
-    //    override func reloadInputViews() {
-    //        moods = CoreDataHelper.retrieveMoods()
-    //        let filtered = moods.filter { (data) -> Bool in
-    //          return data.timestamp?.toString() == date
-    //        }
-    //        moods = filtered
-    //        self.tableView.reloadData()
-    //    }
+//        override func reloadInputViews() {
+//            moods = CoreDataHelper.retrieveMoods()
+//            let filtered = moods.filter { (data) -> Bool in
+//              return data.timestamp?.toString() == date
+//            }
+//            moods = filtered
+//            self.tableView.reloadData()
+//        }
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -190,6 +190,20 @@ extension CalendarViewController: JTAppleCalendarViewDelegate {
     func calendar(_ calendar: JTAppleCalendarView, didSelectDate date: Date, cell: JTAppleCell?, cellState: CellState) {
         handleCellSelected(view: cell, cellState: cellState)
         handleCellTextColor(view: cell, cellState: cellState)
+        
+        // convert calendar date to string
+        
+        let calDate = date.convertToString()
+        // filter entry by date
+        
+        let allMood = CoreDataHelper.retrieveEntry()
+        
+        let filterEntry = allMood.filter { (mood) -> Bool in
+            return mood.timestamp?.convertToString() == calDate
+        }
+        moods = filterEntry
+        tableView.reloadData()
+        
     }
     
     func calendar(_ calendar: JTAppleCalendarView, didDeselectDate date: Date, cell: JTAppleCell?, cellState: CellState) {
@@ -201,7 +215,7 @@ extension CalendarViewController: JTAppleCalendarViewDelegate {
         let moodToDelete = moods[indexPath.row]
         CoreDataHelper.deleteEntry(entry: moodToDelete)
         
-        moods = CoreDataHelper.retrieveMoods()
+        moods = CoreDataHelper.retrieveEntry()
         tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.automatic)
     }
 }
