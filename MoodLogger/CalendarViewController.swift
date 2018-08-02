@@ -5,7 +5,7 @@
 //  Created by Justina Chen on 7/24/18.
 //  Copyright © 2018 Make School. All rights reserved.
 //
-
+import Foundation
 import UIKit
 import JTAppleCalendar
 
@@ -39,18 +39,6 @@ class CalendarViewController: UIViewController, UITableViewDataSource, UITableVi
         
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let identifier = segue.identifier else { return }
-        
-        switch identifier {
-        case "editSegue":
-            let viewController = segue.destination as! NotesViewController
-            viewController.isCreatingNewEntry = false
-        default:
-            break
-        }
-        
-    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -76,6 +64,32 @@ class CalendarViewController: UIViewController, UITableViewDataSource, UITableVi
         //        moods = filtered
         return moods.count
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let mood = moods[indexPath.row]
+        
+        self.performSegue(withIdentifier: "editSegue", sender: mood)
+//        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "edit")
+//        let segue = UIStoryboardSegue(identifier: "editSegue", source: self, destination: vc)
+//        self.prepare(for: segue, sender: mood)
+      
+    }
+    
+  
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let identifier = segue.identifier else { return }
+        
+        switch identifier {
+        case "editSegue":
+            let mood = sender as! Entry
+            let viewController = segue.destination as! NotesViewController
+            viewController.isCreatingNewEntry = false
+            viewController.entry = mood
+        default:
+            break
+        }
+    }
+    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "moodTableViewCell", for: indexPath) as! MoodTableViewCell

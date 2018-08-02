@@ -312,7 +312,6 @@
                                         <connections>
                                             <outlet property="moodLabel" destination="FWa-2a-dtK" id="Ktu-sW-aLk"/>
                                             <outlet property="timestampLabel" destination="KmZ-Wr-A9G" id="rGn-Kd-Uak"/>
-                                            <segue destination="oEG-gY-Wnp" kind="unwind" identifier="editSegue" unwindAction="unwindToNotes:" id="EDT-t3-sMF"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -334,7 +333,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="l0k-Ao-KmC"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="55U-lE-BEh">
+                    <navigationItem key="navigationItem" id="55U-lE-BEh">
                         <barButtonItem key="leftBarButtonItem" systemItem="done" id="Yg1-3S-iME">
                             <connections>
                                 <segue destination="oEG-gY-Wnp" kind="unwind" identifier="unwindDone" unwindAction="unwindToHomescreen:" id="Ia9-hY-NEq"/>
@@ -352,6 +351,7 @@
                         <outlet property="month" destination="sVz-UB-AJs" id="aDX-Ly-YPH"/>
                         <outlet property="tableView" destination="UhH-oV-kbp" id="kAe-HX-msx"/>
                         <outlet property="year" destination="xNU-hY-vV5" id="qRk-2M-AzP"/>
+                        <segue destination="FQh-kh-7j0" kind="show" identifier="editSegue" id="6El-XK-6kg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vrY-TN-2hY" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -362,7 +362,7 @@
         <!--Notes View Controller-->
         <scene sceneID="uNB-JL-eOL">
             <objects>
-                <viewController id="FQh-kh-7j0" customClass="NotesViewController" customModule="MoodLogger" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="edit" id="FQh-kh-7j0" customClass="NotesViewController" customModule="MoodLogger" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0yg-Vc-mw5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -451,7 +451,7 @@
         <image name="calendar.png" width="1024" height="1024"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="3nI-XX-7uf"/>
+        <segue reference="6El-XK-6kg"/>
         <segue reference="HRB-D2-5sO"/>
     </inferredMetricsTieBreakers>
 </document>
