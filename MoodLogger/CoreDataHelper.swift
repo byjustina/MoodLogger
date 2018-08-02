@@ -23,12 +23,12 @@ struct CoreDataHelper {
         return context
     }()
     
-    static func newMood() -> Entry {
+    static func newEntry() -> Entry {
         let mood = NSEntityDescription.insertNewObject(forEntityName: "Entry", into: context) as! Entry
         return mood
     }
     
-    static func saveMood() {
+    static func saveEntry() {
         do {
             try context.save()
         } catch let error {
@@ -36,9 +36,9 @@ struct CoreDataHelper {
         }
     }
     
-   static func delete(mood: Entry) {
-        context.delete(mood)
-        saveMood()
+   static func deleteEntry(entry: Entry) {
+        context.delete(entry)
+        saveEntry()
     }
     
     static func retrieveMoods() -> [Entry] {

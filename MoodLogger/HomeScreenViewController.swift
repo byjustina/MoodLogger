@@ -41,44 +41,47 @@ class HomeScreenViewController: UIViewController {
         if identifier == "showCalendar" {
             
         } else {
-            //addding a new Entry
-            
-            
+            //adding a new Entry
             
             //create a newEntry from CoreDataHelper.newEntry()
+            let newEntry = CoreDataHelper.newEntry()
             
+            //get the selected mood and turn it into an Entry.Moods value
+            let newMoodValueFromButton: Entry.Moods
             
-            //get the selected mood and turn it into a Entry.Moods value
-            
+            switch identifier {
+            case "amazing":
+                newMoodValueFromButton = .Amazing
+            case "good":
+                newMoodValueFromButton = .Good
+            case "neutral":
+                newMoodValueFromButton = .Neutral
+            case "bad":
+                newMoodValueFromButton = .Bad
+            case "terrible":
+                newMoodValueFromButton = .Terrible
+            default:
+                fatalError("segue identifier not handled: \(identifier)")
+            }
             
             //update the newEntry values: timestamp, mood
+            newEntry.mood = newMoodValueFromButton
+            newEntry.timestamp = datePicker.date
             
+            guard let viewController = segue.destination as? NotesViewController else {
+                fatalError("storyboard not set up correctly")
+            }
             
-        }
-        
-        
-        switch identifier {
-        case "amazing":
-            break
-        case "good":
-            break
-        case "neutral":
-            break
-        case "bad":
-            break
-        case "terrible":
-            break
-        case "showCalendar":
-            print("Transitioning to the Calendar View Controller")
-            
-        default:
-            print("unexpected segue identifier")
+            viewController.entry = newEntry
         }
     }
+    
+    
     
     @IBOutlet weak var introLabel: UILabel!
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var amazingButton: UIButton!
+    
     @IBOutlet weak var goodButton: UIButton!
     @IBOutlet weak var neutralButton: UIButton!
 
@@ -87,8 +90,5 @@ class HomeScreenViewController: UIViewController {
     @IBOutlet weak var terribleButton: UIButton!
 
     @IBOutlet weak var calendarButton: UIButton!
-
-//    let btnImage = UIImage(named: "image")
-//    btnTwo.setImage(btnImage , for: UIControlState.normal)
     
 }

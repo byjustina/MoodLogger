@@ -10,7 +10,7 @@ import UIKit
 
 class NotesViewController: UIViewController {
     
-   var mood: Entry?
+   var entry: Entry?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,8 +18,10 @@ class NotesViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        print(entry?.mood.stringValue)
     
-        if let mood = mood {
+        if let mood = entry {
             didAnswerView.text = mood.mood.stringValue
             changeAnswerView.text = mood.answer2
         } else {
@@ -32,20 +34,20 @@ class NotesViewController: UIViewController {
         guard let identifier = segue.identifier else { return }
         
         switch identifier {
-        case "save" where mood != nil:
-            mood?.answer1 = didAnswerView.text ?? ""
-            mood?.answer2 = changeAnswerView.text ?? ""
-            mood?.timestamp = Date()
+        case "save" where entry != nil:
+            entry?.answer1 = didAnswerView.text ?? ""
+            entry?.answer2 = changeAnswerView.text ?? ""
+            entry?.timestamp = Date()
             
-            CoreDataHelper.saveMood()
+            CoreDataHelper.saveEntry()
             
-        case "save" where mood == nil:
-            let mood = CoreDataHelper.newMood()
+        case "save" where entry == nil:
+            let mood = CoreDataHelper.newEntry()
             mood.answer1 = didAnswerView.text ?? ""
             mood.answer2 = changeAnswerView.text ?? ""
             mood.timestamp = Date()
             
-            CoreDataHelper.saveMood()
+            CoreDataHelper.saveEntry()
             
         case "cancel":
             print("cancel bar button item tapped")

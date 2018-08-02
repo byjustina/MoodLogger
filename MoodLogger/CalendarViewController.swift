@@ -23,9 +23,9 @@ class CalendarViewController: UIViewController, UITableViewDataSource, UITableVi
     @IBOutlet weak var month: UILabel!
     
     let outsideMonthColor: UIColor = .darkGray
-    let monthColor = UIColor(red: 100/255, green: 255/255, blue: 200/255, alpha: 1.0)
+    let monthColor = UIColor(red: 253/255, green: 253/255, blue: 253/255, alpha: 1.0)
     let selectedMonthColor = UIColor.white
-    let currentDateSelectedViewColor = UIColor(red: 100/255, green: 200/255, blue: 300/255, alpha: 1.0)
+    let currentDateSelectedViewColor = UIColor(red: 100/255, green: 200/255, blue: 200/255, alpha: 1.0)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,10 +39,25 @@ class CalendarViewController: UIViewController, UITableViewDataSource, UITableVi
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        moods = CoreDataHelper.retrieveMoods()
         tableView.reloadData()
     }
     
+//    override func reloadInputViews() {
+//        moods = CoreDataHelper.retrieveMoods()
+//        let filtered = moods.filter { (data) -> Bool in
+//          return data.timestamp?.toString() == Date
+//        }
+//        moods = filtered
+//        self.tableView.reloadData()
+//    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        moods = CoreDataHelper.retrieveMoods()
+//        let filtered = moods.filter { (data) -> Bool in
+//            return data.dateCreated?.toString() == date
+//        }
+//        moods = filtered
         return moods.count
     }
     
@@ -92,7 +107,7 @@ class CalendarViewController: UIViewController, UITableViewDataSource, UITableVi
         let date = visibleDates.monthDates.first!.date
         
         self.formatter.dateFormat = "yyyy"
-        self.year.text = "   " + self.formatter.string(from: date)
+        self.year.text = "     " + self.formatter.string(from: date)
         
         self.formatter.dateFormat = "MMMM"
         self.month.text = "   " + self.formatter.string(from: date)
@@ -154,10 +169,9 @@ extension CalendarViewController: JTAppleCalendarViewDelegate {
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         let moodToDelete = moods[indexPath.row]
-        CoreDataHelper.delete(mood: moodToDelete)
+        CoreDataHelper.deleteEntry(entry: moodToDelete)
     
         moods = CoreDataHelper.retrieveMoods()
         tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.automatic)
     }
-    
 }
