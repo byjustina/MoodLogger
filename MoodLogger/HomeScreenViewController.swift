@@ -30,7 +30,7 @@ class HomeScreenViewController: UIViewController {
         self.navigationController?.setNavigationBarHidden(false, animated: animated)
     }
 
-    @IBAction func unwindWithSegue(_ segue: UIStoryboardSegue) {
+    @IBAction func unwindToHomescreen(_ segue: UIStoryboardSegue) {
         moods = CoreDataHelper.retrieveMoods()
     }
     

@@ -13,7 +13,8 @@ import JTAppleCalendar
 class CalendarViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     var moods = [Entry]()
-        
+    //var date: String?
+    
     @IBOutlet weak var tableView: UITableView!
     
     let formatter = DateFormatter()
@@ -26,7 +27,7 @@ class CalendarViewController: UIViewController, UITableViewDataSource, UITableVi
     let monthColor = UIColor(red: 253/255, green: 253/255, blue: 253/255, alpha: 1.0)
     let selectedMonthColor = UIColor.white
     let currentDateSelectedViewColor = UIColor(red: 100/255, green: 200/255, blue: 200/255, alpha: 1.0)
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         //existing
@@ -35,6 +36,20 @@ class CalendarViewController: UIViewController, UITableViewDataSource, UITableVi
         
         setupCalendarView()
         moods = CoreDataHelper.retrieveMoods()
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let identifier = segue.identifier else { return }
+        
+        switch identifier {
+        case "editSegue":
+            let viewController = segue.destination as! NotesViewController
+            viewController.isCreatingNewEntry = false
+        default:
+            break
+        }
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -43,21 +58,22 @@ class CalendarViewController: UIViewController, UITableViewDataSource, UITableVi
         tableView.reloadData()
     }
     
-//    override func reloadInputViews() {
-//        moods = CoreDataHelper.retrieveMoods()
-//        let filtered = moods.filter { (data) -> Bool in
-//          return data.timestamp?.toString() == Date
-//        }
-//        moods = filtered
-//        self.tableView.reloadData()
-//    }
+    //    override func reloadInputViews() {
+    //        moods = CoreDataHelper.retrieveMoods()
+    //        let filtered = moods.filter { (data) -> Bool in
+    //          return data.timestamp?.toString() == date
+    //        }
+    //        moods = filtered
+    //        self.tableView.reloadData()
+    //    }
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        moods = CoreDataHelper.retrieveMoods()
-//        let filtered = moods.filter { (data) -> Bool in
-//            return data.dateCreated?.toString() == date
-//        }
-//        moods = filtered
+        //        moods = CoreDataHelper.retrieveMoods()
+        //        let filtered = moods.filter { (data) -> Bool in
+        //            return data.dateCreated?.toString() == date
+        //        }
+        //        moods = filtered
         return moods.count
     }
     
@@ -170,8 +186,10 @@ extension CalendarViewController: JTAppleCalendarViewDelegate {
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         let moodToDelete = moods[indexPath.row]
         CoreDataHelper.deleteEntry(entry: moodToDelete)
-    
+        
         moods = CoreDataHelper.retrieveMoods()
         tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.automatic)
     }
 }
+
+

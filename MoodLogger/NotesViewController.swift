@@ -10,6 +10,8 @@ import UIKit
 
 class NotesViewController: UIViewController {
     
+    var isCreatingNewEntry: Bool = true
+    
    var entry: Entry?
 
     override func viewDidLoad() {
@@ -18,11 +20,9 @@ class NotesViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        print(entry?.mood.stringValue)
     
         if let mood = entry {
-            didAnswerView.text = mood.mood.stringValue
+            didAnswerView.text = mood.answer1
             changeAnswerView.text = mood.answer2
         } else {
             didAnswerView.text = ""
@@ -37,7 +37,6 @@ class NotesViewController: UIViewController {
         case "save" where entry != nil:
             entry?.answer1 = didAnswerView.text ?? ""
             entry?.answer2 = changeAnswerView.text ?? ""
-            entry?.timestamp = Date()
             
             CoreDataHelper.saveEntry()
             
@@ -48,11 +47,6 @@ class NotesViewController: UIViewController {
             mood.timestamp = Date()
             
             CoreDataHelper.saveEntry()
-            
-        case "cancel":
-            print("cancel bar button item tapped")
-            
-            
         default:
             print("unexpected segue identifier")
         }
@@ -66,4 +60,18 @@ class NotesViewController: UIViewController {
     @IBOutlet weak var didAnswerView: UITextView!
     @IBOutlet weak var changeQuestionLabel: UILabel!
     @IBOutlet weak var changeAnswerView: UITextView!
+    @IBAction func unwindToNotes(_ segue: UIStoryboardSegue) {
+        
+    }
+    
+    @IBAction func cancelAction(_ sender: UIBarButtonItem) {
+        if isCreatingNewEntry == true {
+            CoreDataHelper.deleteEntry(entry: entry!)
+            performSegue(withIdentifier: "unwindCancel", sender: nil)
+        } else {
+            performSegue(withIdentifier: "showCalendar", sender: nil)
+        }
+        
+    }
+    
 }
