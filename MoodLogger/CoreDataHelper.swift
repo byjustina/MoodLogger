@@ -41,6 +41,7 @@ struct CoreDataHelper {
         saveEntry()
     }
     
+    /** fetch all of the entries from core data */
     static func retrieveEntry() -> [Entry] {
         do {
             let fetchRequest = NSFetchRequest<Entry>(entityName: "Entry")
@@ -54,6 +55,32 @@ struct CoreDataHelper {
         }
     }
     
+    /** fetch all of the entries that were added to the same day as the given date */
+    static func retrieveEntry(for date: Date) -> [Entry] {
+        do {
+            var dateComponents = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second, .nanosecond, .calendar], from: date)
+            dateComponents.hour = 0
+            dateComponents.minute = 0
+            dateComponents.second = 0
+            dateComponents.nanosecond = 0
+            guard let dateFromComponents = dateComponents.date else {
+                fatalError("failed to create a date from dateComponents")
+            }
+            
+            let dateMidnight = dateFromComponents
+            let day: TimeInterval = 60*60*24
+            let afterDateMidnight = dateMidnight.addingTimeInterval(day)
+            let fetchRequest = NSFetchRequest<Entry>(entityName: "Entry")
+            fetchRequest.predicate = NSPredicate(format: "(%@ <= timestamp) AND (timestamp < %@)", dateMidnight as NSDate, afterDateMidnight as NSDate)
+            let results = try context.fetch(fetchRequest)
+            
+            return results
+        } catch let error {
+            print("Could not fetch \(error.localizedDescription)")
+            
+            return []
+        }
+    }
 }
 
 

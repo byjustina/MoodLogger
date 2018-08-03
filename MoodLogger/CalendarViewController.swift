@@ -12,7 +12,7 @@ import JTAppleCalendar
 
 class CalendarViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    var moods = [Entry]()
+    var entriesForSelectedDay = [Entry]()
     var date: String?
     
     @IBOutlet weak var tableView: UITableView!
@@ -35,38 +35,42 @@ class CalendarViewController: UIViewController, UITableViewDataSource, UITableVi
         tableView.dataSource = self
         
         setupCalendarView()
-        moods = CoreDataHelper.retrieveEntry()
+        entriesForSelectedDay = CoreDataHelper.retrieveEntry()
         
     }
     
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        moods = CoreDataHelper.retrieveEntry()
+        
+        let today = Date()
+        calendarView.selectDates([today])
+        calendarView.scrollToDate(today, animateScroll: false)
+        entriesForSelectedDay = CoreDataHelper.retrieveEntry(for: today)
         tableView.reloadData()
     }
     
 //        override func reloadInputViews() {
-//            moods = CoreDataHelper.retrieveMoods()
-//            let filtered = moods.filter { (data) -> Bool in
+//            entriesForSelectedDay = CoreDataHelper.retrieveMoods()
+//            let filtered = entriesForSelectedDay.filter { (data) -> Bool in
 //              return data.timestamp?.toString() == date
 //            }
-//            moods = filtered
+//            entriesForSelectedDay = filtered
 //            self.tableView.reloadData()
 //        }
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //        moods = CoreDataHelper.retrieveMoods()
-        //        let filtered = moods.filter { (data) -> Bool in
+        //        entriesForSelectedDay = CoreDataHelper.retrieveMoods()
+        //        let filtered = entriesForSelectedDay.filter { (data) -> Bool in
         //            return data.dateCreated?.toString() == date
         //        }
-        //        moods = filtered
-        return moods.count
+        //        entriesForSelectedDay = filtered
+        return entriesForSelectedDay.count
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let mood = moods[indexPath.row]
+        let mood = entriesForSelectedDay[indexPath.row]
         
         self.performSegue(withIdentifier: "editSegue", sender: mood)
 //        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "edit")
@@ -94,7 +98,7 @@ class CalendarViewController: UIViewController, UITableViewDataSource, UITableVi
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "moodTableViewCell", for: indexPath) as! MoodTableViewCell
         
-        let mood = moods[indexPath.row]
+        let mood = entriesForSelectedDay[indexPath.row]
         cell.moodLabel.text = mood.mood.stringValue
         cell.timestampLabel.text = mood.timestamp?.convertToString() ?? "unknown"
         
@@ -177,6 +181,33 @@ extension CalendarViewController: JTAppleCalendarViewDelegate {
     
     func sharedFunctionToConfigureCell(myCustomCell: CustomCell, cellState: CellState, date: Date) {
         myCustomCell.dateLabel.text = cellState.text
+        
+        //fetch entries based off of the date from core data
+        let entries = CoreDataHelper.retrieveEntry(for: date)
+        
+        //create a var that has the count of the entries found
+        let numberOfEntries = entries.count
+        
+        //swtich on the count var
+        switch numberOfEntries {
+        case 0:
+            //case 0: hide all the lines
+            myCustomCell.entry1.isHidden = true
+        case 1:
+            //case 1: update the first line with the color of the first entry, and hide all other lines
+            let firstEntry = entries[0]
+            let firstColor = firstEntry.mood.colorValue
+            myCustomCell.entry1.backgroundColor = firstColor
+            myCustomCell.entry1.isHidden = false
+        case 2:
+            break
+        case 3:
+            break
+        case 4:
+            break
+        default: //unhide the plus icon
+            break
+        }
     }
     
     func calendar(_ calendar: JTAppleCalendarView, cellForItemAt date: Date, cellState: CellState, indexPath: IndexPath) -> JTAppleCell {
@@ -190,18 +221,8 @@ extension CalendarViewController: JTAppleCalendarViewDelegate {
     func calendar(_ calendar: JTAppleCalendarView, didSelectDate date: Date, cell: JTAppleCell?, cellState: CellState) {
         handleCellSelected(view: cell, cellState: cellState)
         handleCellTextColor(view: cell, cellState: cellState)
-        
-        // convert calendar date to string
-        
-        let calDate = date.convertToString()
-        // filter entry by date
-        
-        let allMood = CoreDataHelper.retrieveEntry()
-        
-        let filterEntry = allMood.filter { (mood) -> Bool in
-            return mood.timestamp?.convertToString() == calDate
-        }
-        moods = filterEntry
+       
+        entriesForSelectedDay = CoreDataHelper.retrieveEntry(for: date)
         tableView.reloadData()
         
     }
@@ -212,12 +233,14 @@ extension CalendarViewController: JTAppleCalendarViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        let moodToDelete = moods[indexPath.row]
+        let moodToDelete = entriesForSelectedDay[indexPath.row]
         CoreDataHelper.deleteEntry(entry: moodToDelete)
         
-        moods = CoreDataHelper.retrieveEntry()
+        entriesForSelectedDay = CoreDataHelper.retrieveEntry()
         tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.automatic)
     }
+    
+    
 }
 
 

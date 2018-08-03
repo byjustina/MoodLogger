@@ -234,23 +234,45 @@
                                                             <color key="backgroundColor" white="0.1173172188283208" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </view>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t9f-zO-Hsj">
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="XMy-VK-Bkq">
                                                             <rect key="frame" x="0.0" y="0.0" width="102" height="104.5"/>
-                                                            <fontDescription key="fontDescription" name="GeosansLight" family="GeosansLight" pointSize="19"/>
-                                                            <color key="textColor" white="0.91909705905388472" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t9f-zO-Hsj">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="102" height="21"/>
+                                                                    <fontDescription key="fontDescription" name="GeosansLight" family="GeosansLight" pointSize="19"/>
+                                                                    <color key="textColor" white="0.91909705905388472" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="lEf-Pt-49C">
+                                                                    <rect key="frame" x="0.0" y="29" width="102" height="75.5"/>
+                                                                    <subviews>
+                                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Oer-if-F5I">
+                                                                            <rect key="frame" x="0.0" y="0.0" width="102" height="17.5"/>
+                                                                        </imageView>
+                                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AlK-Vh-YnO">
+                                                                            <rect key="frame" x="0.0" y="19.5" width="102" height="17.5"/>
+                                                                        </imageView>
+                                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DLy-iN-E5X">
+                                                                            <rect key="frame" x="0.0" y="39" width="102" height="17"/>
+                                                                        </imageView>
+                                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XFr-PN-075">
+                                                                            <rect key="frame" x="0.0" y="58" width="102" height="17.5"/>
+                                                                        </imageView>
+                                                                    </subviews>
+                                                                </stackView>
+                                                            </subviews>
+                                                        </stackView>
                                                     </subviews>
                                                 </view>
                                                 <constraints>
-                                                    <constraint firstAttribute="bottom" secondItem="t9f-zO-Hsj" secondAttribute="bottom" id="1RV-cU-YHg"/>
-                                                    <constraint firstItem="t9f-zO-Hsj" firstAttribute="top" secondItem="0A0-Oe-OBg" secondAttribute="top" id="5XS-fu-vyk"/>
                                                     <constraint firstAttribute="bottom" secondItem="Puz-sA-b7N" secondAttribute="bottom" id="6m2-vv-f6y"/>
-                                                    <constraint firstItem="t9f-zO-Hsj" firstAttribute="leading" secondItem="0A0-Oe-OBg" secondAttribute="leading" id="NSA-1b-tUi"/>
+                                                    <constraint firstItem="XMy-VK-Bkq" firstAttribute="leading" secondItem="0A0-Oe-OBg" secondAttribute="leading" id="9Wk-sH-37w"/>
+                                                    <constraint firstItem="XMy-VK-Bkq" firstAttribute="top" secondItem="0A0-Oe-OBg" secondAttribute="top" id="AMJ-hW-yGl"/>
                                                     <constraint firstItem="Puz-sA-b7N" firstAttribute="leading" secondItem="0A0-Oe-OBg" secondAttribute="leading" id="OUA-6e-7vm"/>
                                                     <constraint firstAttribute="trailing" secondItem="Puz-sA-b7N" secondAttribute="trailing" id="aaA-fM-cyh"/>
                                                     <constraint firstItem="Puz-sA-b7N" firstAttribute="top" secondItem="0A0-Oe-OBg" secondAttribute="top" id="dlr-Xq-Br4"/>
-                                                    <constraint firstAttribute="trailing" secondItem="t9f-zO-Hsj" secondAttribute="trailing" id="fJN-mU-ubF"/>
+                                                    <constraint firstAttribute="bottom" secondItem="XMy-VK-Bkq" secondAttribute="bottom" id="f9b-SO-3Dt"/>
+                                                    <constraint firstAttribute="trailing" secondItem="XMy-VK-Bkq" secondAttribute="trailing" id="u89-Fp-KPV"/>
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
@@ -259,6 +281,10 @@
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <outlet property="dateLabel" destination="t9f-zO-Hsj" id="A6b-ah-VX0"/>
+                                                    <outlet property="entry1" destination="XFr-PN-075" id="nqe-cL-m1E"/>
+                                                    <outlet property="entry2" destination="DLy-iN-E5X" id="irm-ra-O7r"/>
+                                                    <outlet property="entry3" destination="AlK-Vh-YnO" id="6Po-xd-MR4"/>
+                                                    <outlet property="entry4" destination="Oer-if-F5I" id="9v4-mw-PoB"/>
                                                     <outlet property="selectedView" destination="Puz-sA-b7N" id="Dk7-1b-akF"/>
                                                 </connections>
                                             </collectionViewCell>
@@ -390,15 +416,18 @@
                                 <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Question" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zsq-3F-Dxw">
-                                <rect key="frame" x="16" y="390" width="67" height="20"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="What do you want to do?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zsq-3F-Dxw">
+                                <rect key="frame" x="20" y="390" width="335" height="20"/>
                                 <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="3vD-eb-ucv" firstAttribute="trailing" secondItem="zsq-3F-Dxw" secondAttribute="trailing" constant="20" id="XfB-3Y-g4R"/>
+                            <constraint firstItem="zsq-3F-Dxw" firstAttribute="leading" secondItem="0yg-Vc-mw5" secondAttribute="leading" constant="20" id="ZZl-Dl-rPR"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="3vD-eb-ucv"/>
                     </view>
                     <navigationItem key="navigationItem" id="bfr-Pn-EfU">
