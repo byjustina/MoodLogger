@@ -18,3 +18,4 @@ class CustomCell: JTAppleCell {
     @IBOutlet weak var entry4: UIImageView!
 }
 
+

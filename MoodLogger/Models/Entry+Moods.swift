@@ -41,7 +41,7 @@ extension Entry {
             case .Amazing:
                 return #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
             case .Good:
-                return #colorLiteral(red: 0.9764705896, green: 0.850980401, blue: 0.5490196347, alpha: 1)
+                return #colorLiteral(red: 1, green: 0.831372549, blue: 0.1411764706, alpha: 1)
             case .Neutral:
                 return #colorLiteral(red: 0.9372549057, green: 0.3490196168, blue: 0.1921568662, alpha: 1)
             case .Bad:

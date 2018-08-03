@@ -50,22 +50,9 @@ class CalendarViewController: UIViewController, UITableViewDataSource, UITableVi
         tableView.reloadData()
     }
     
-//        override func reloadInputViews() {
-//            entriesForSelectedDay = CoreDataHelper.retrieveMoods()
-//            let filtered = entriesForSelectedDay.filter { (data) -> Bool in
-//              return data.timestamp?.toString() == date
-//            }
-//            entriesForSelectedDay = filtered
-//            self.tableView.reloadData()
-//        }
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //        entriesForSelectedDay = CoreDataHelper.retrieveMoods()
-        //        let filtered = entriesForSelectedDay.filter { (data) -> Bool in
-        //            return data.dateCreated?.toString() == date
-        //        }
-        //        entriesForSelectedDay = filtered
         return entriesForSelectedDay.count
     }
     
@@ -193,18 +180,42 @@ extension CalendarViewController: JTAppleCalendarViewDelegate {
         case 0:
             //case 0: hide all the lines
             myCustomCell.entry1.isHidden = true
+            myCustomCell.entry2.isHidden = true
+            myCustomCell.entry3.isHidden = true
+            myCustomCell.entry4.isHidden = true
         case 1:
             //case 1: update the first line with the color of the first entry, and hide all other lines
             let firstEntry = entries[0]
             let firstColor = firstEntry.mood.colorValue
             myCustomCell.entry1.backgroundColor = firstColor
             myCustomCell.entry1.isHidden = false
+            myCustomCell.entry2.isHidden = true
+            myCustomCell.entry3.isHidden = true
+            myCustomCell.entry4.isHidden = true
         case 2:
-            break
+            let secondEntry = entries[1]
+            let secondColor = secondEntry.mood.colorValue
+            myCustomCell.entry2.backgroundColor = secondColor
+            myCustomCell.entry1.isHidden = true
+            myCustomCell.entry2.isHidden = false
+            myCustomCell.entry3.isHidden = true
+            myCustomCell.entry4.isHidden = true
         case 3:
-            break
+            let thirdEntry = entries[2]
+            let thirdColor = thirdEntry.mood.colorValue
+            myCustomCell.entry3.backgroundColor = thirdColor
+            myCustomCell.entry1.isHidden = true
+            myCustomCell.entry2.isHidden = true
+            myCustomCell.entry3.isHidden = false
+            myCustomCell.entry4.isHidden = true
         case 4:
-            break
+            let fourthEntry = entries[3]
+            let fourthColor = fourthEntry.mood.colorValue
+            myCustomCell.entry4.backgroundColor = fourthColor
+            myCustomCell.entry1.isHidden = true
+            myCustomCell.entry2.isHidden = true
+            myCustomCell.entry3.isHidden = true
+            myCustomCell.entry4.isHidden = false
         default: //unhide the plus icon
             break
         }
@@ -223,7 +234,7 @@ extension CalendarViewController: JTAppleCalendarViewDelegate {
         handleCellTextColor(view: cell, cellState: cellState)
        
         entriesForSelectedDay = CoreDataHelper.retrieveEntry(for: date)
-        tableView.reloadData()
+       // tableView.reloadData()
         
     }
     
@@ -233,14 +244,17 @@ extension CalendarViewController: JTAppleCalendarViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+//        if editingStyle == .delete {
+//            let moodToDelete = entriesForSelectedDay[indexPath.row]
+//            CoreDataHelper.deleteEntry(entry: moodToDelete)
+//            entriesForSelectedDay = CoreDataHelper.retrieveEntry()
         let moodToDelete = entriesForSelectedDay[indexPath.row]
         CoreDataHelper.deleteEntry(entry: moodToDelete)
         
         entriesForSelectedDay = CoreDataHelper.retrieveEntry()
         tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.automatic)
-    }
-    
-    
+        tableView.reloadData()
+    }    
 }
 
 

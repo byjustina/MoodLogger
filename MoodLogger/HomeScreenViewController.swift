@@ -11,7 +11,7 @@ import UIKit
 class HomeScreenViewController: UIViewController {
     
     var moods = [Entry]()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
