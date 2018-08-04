@@ -29,13 +29,14 @@ class CalendarViewController: UIViewController, UITableViewDataSource, UITableVi
     let currentDateSelectedViewColor = UIColor(red: 100/255, green: 200/255, blue: 200/255, alpha: 1.0)
     
     override func viewDidLoad() {
+       // UICollectionView.layer.borderColor = UIColor.white
         super.viewDidLoad()
         //existing
         tableView.delegate = self
         tableView.dataSource = self
         
         setupCalendarView()
-        entriesForSelectedDay = CoreDataHelper.retrieveEntry()
+//        entriesForSelectedDay = CoreDataHelper.retrieveEntry()
         
     }
     
@@ -234,7 +235,7 @@ extension CalendarViewController: JTAppleCalendarViewDelegate {
         handleCellTextColor(view: cell, cellState: cellState)
        
         entriesForSelectedDay = CoreDataHelper.retrieveEntry(for: date)
-       // tableView.reloadData()
+        tableView.reloadData()
         
     }
     
@@ -250,10 +251,10 @@ extension CalendarViewController: JTAppleCalendarViewDelegate {
 //            entriesForSelectedDay = CoreDataHelper.retrieveEntry()
         let moodToDelete = entriesForSelectedDay[indexPath.row]
         CoreDataHelper.deleteEntry(entry: moodToDelete)
-        
-        entriesForSelectedDay = CoreDataHelper.retrieveEntry()
+        entriesForSelectedDay.remove(at: indexPath.row)
         tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.automatic)
-        tableView.reloadData()
+        //tableView.reloadData()
+        //each cell of calendar shows the same entry for every day, crashes when trying to delete, colored bars on calendar cell too thick and when another entry is entered the color on the calendar is replaced by that new entry, second question on notes screen disappears
     }    
 }
 
