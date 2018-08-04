@@ -180,43 +180,43 @@ extension CalendarViewController: JTAppleCalendarViewDelegate {
         switch numberOfEntries {
         case 0:
             //case 0: hide all the lines
-            myCustomCell.entry1.isHidden = true
-            myCustomCell.entry2.isHidden = true
-            myCustomCell.entry3.isHidden = true
-            myCustomCell.entry4.isHidden = true
+            myCustomCell.entry1.alpha = 0
+            myCustomCell.entry2.alpha = 0
+            myCustomCell.entry3.alpha = 0
+            myCustomCell.entry4.alpha = 0
         case 1:
             //case 1: update the first line with the color of the first entry, and hide all other lines
             let firstEntry = entries[0]
             let firstColor = firstEntry.mood.colorValue
             myCustomCell.entry1.backgroundColor = firstColor
-            myCustomCell.entry1.isHidden = false
-            myCustomCell.entry2.isHidden = true
-            myCustomCell.entry3.isHidden = true
-            myCustomCell.entry4.isHidden = true
+            myCustomCell.entry1.alpha = 1
+            myCustomCell.entry2.alpha = 0
+            myCustomCell.entry3.alpha = 0
+            myCustomCell.entry4.alpha = 0
         case 2:
             let secondEntry = entries[1]
             let secondColor = secondEntry.mood.colorValue
             myCustomCell.entry2.backgroundColor = secondColor
-            myCustomCell.entry1.isHidden = true
-            myCustomCell.entry2.isHidden = false
-            myCustomCell.entry3.isHidden = true
-            myCustomCell.entry4.isHidden = true
+            myCustomCell.entry1.alpha = 0
+            myCustomCell.entry2.alpha = 1
+            myCustomCell.entry3.alpha = 0
+            myCustomCell.entry4.alpha = 0
         case 3:
             let thirdEntry = entries[2]
             let thirdColor = thirdEntry.mood.colorValue
             myCustomCell.entry3.backgroundColor = thirdColor
-            myCustomCell.entry1.isHidden = true
-            myCustomCell.entry2.isHidden = true
-            myCustomCell.entry3.isHidden = false
-            myCustomCell.entry4.isHidden = true
+            myCustomCell.entry1.alpha = 0
+            myCustomCell.entry2.alpha = 0
+            myCustomCell.entry3.alpha = 1
+            myCustomCell.entry4.alpha = 0
         case 4:
             let fourthEntry = entries[3]
             let fourthColor = fourthEntry.mood.colorValue
             myCustomCell.entry4.backgroundColor = fourthColor
-            myCustomCell.entry1.isHidden = true
-            myCustomCell.entry2.isHidden = true
-            myCustomCell.entry3.isHidden = true
-            myCustomCell.entry4.isHidden = false
+            myCustomCell.entry1.alpha = 0
+            myCustomCell.entry2.alpha = 0
+            myCustomCell.entry3.alpha = 0
+            myCustomCell.entry4.alpha = 1
         default: //unhide the plus icon
             break
         }
