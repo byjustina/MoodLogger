@@ -254,7 +254,8 @@ extension CalendarViewController: JTAppleCalendarViewDelegate {
         entriesForSelectedDay.remove(at: indexPath.row)
         tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.automatic)
         //tableView.reloadData()
-        //each cell of calendar shows the same entry for every day, crashes when trying to delete, colored bars on calendar cell too thick and when another entry is entered the color on the calendar is replaced by that new entry, second question on notes screen disappears
+        // entry 1 colored bar on calendar cell too thin when compared to the others
+        //when another entry is entered the color on the calendar is replaced by that new entry
     }    
 }
 

@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -408,31 +409,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="What did you do today?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SLa-Jv-QT9">
-                                <rect key="frame" x="15" y="90" width="345" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What did you do today?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SLa-Jv-QT9">
+                                <rect key="frame" x="102.5" y="91" width="174" height="20"/>
                                 <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Jx0-sy-jFf">
-                                <rect key="frame" x="16" y="418" width="343" height="229"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Jx0-sy-jFf">
+                                <rect key="frame" x="16" y="418" width="347" height="229"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="What do you want to do?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zsq-3F-Dxw">
-                                <rect key="frame" x="20" y="390" width="335" height="20"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What do you want to do?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zsq-3F-Dxw">
+                                <rect key="frame" x="20" y="390" width="339" height="20"/>
                                 <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="4s4-yc-ulw">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="4s4-yc-ulw">
                                 <rect key="frame" x="20" y="119" width="343" height="229"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="229" id="5SL-e9-YLi"/>
+                                </constraints>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -440,8 +441,21 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="3vD-eb-ucv" firstAttribute="trailing" secondItem="zsq-3F-Dxw" secondAttribute="trailing" constant="20" id="XfB-3Y-g4R"/>
-                            <constraint firstItem="zsq-3F-Dxw" firstAttribute="leading" secondItem="0yg-Vc-mw5" secondAttribute="leading" constant="20" id="ZZl-Dl-rPR"/>
+                            <constraint firstItem="zsq-3F-Dxw" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="4s4-yc-ulw" secondAttribute="leading" id="Auw-Y6-0w2"/>
+                            <constraint firstItem="4s4-yc-ulw" firstAttribute="leading" secondItem="3vD-eb-ucv" secondAttribute="leading" constant="20" id="BrW-V6-xm1"/>
+                            <constraint firstItem="zsq-3F-Dxw" firstAttribute="top" secondItem="4s4-yc-ulw" secondAttribute="bottom" constant="42" id="F49-pl-l0X"/>
+                            <constraint firstAttribute="bottom" secondItem="Jx0-sy-jFf" secondAttribute="bottom" constant="20" symbolic="YES" id="Hkt-uf-svc"/>
+                            <constraint firstItem="3vD-eb-ucv" firstAttribute="trailing" secondItem="Jx0-sy-jFf" secondAttribute="trailing" constant="12" id="K5l-pK-SSk"/>
+                            <constraint firstItem="zsq-3F-Dxw" firstAttribute="centerX" secondItem="Jx0-sy-jFf" secondAttribute="centerX" id="OHM-3p-H50"/>
+                            <constraint firstItem="3vD-eb-ucv" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="zsq-3F-Dxw" secondAttribute="trailing" id="XfB-3Y-g4R"/>
+                            <constraint firstItem="4s4-yc-ulw" firstAttribute="leading" secondItem="zsq-3F-Dxw" secondAttribute="leading" id="YxB-7E-Tt5"/>
+                            <constraint firstItem="zsq-3F-Dxw" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="0yg-Vc-mw5" secondAttribute="leading" id="ZZl-Dl-rPR"/>
+                            <constraint firstItem="Jx0-sy-jFf" firstAttribute="top" secondItem="zsq-3F-Dxw" secondAttribute="bottom" constant="8" symbolic="YES" id="gXp-NZ-mKq"/>
+                            <constraint firstItem="Jx0-sy-jFf" firstAttribute="leading" secondItem="0yg-Vc-mw5" secondAttribute="leadingMargin" id="hk4-ym-ZDu"/>
+                            <constraint firstItem="zsq-3F-Dxw" firstAttribute="centerX" secondItem="SLa-Jv-QT9" secondAttribute="centerX" id="kWi-jE-zFJ"/>
+                            <constraint firstAttribute="bottom" secondItem="zsq-3F-Dxw" secondAttribute="bottom" constant="257" id="qgC-Px-ksg"/>
+                            <constraint firstItem="4s4-yc-ulw" firstAttribute="top" secondItem="SLa-Jv-QT9" secondAttribute="bottom" constant="8" symbolic="YES" id="s8w-34-CsA"/>
+                            <constraint firstItem="3vD-eb-ucv" firstAttribute="trailing" secondItem="4s4-yc-ulw" secondAttribute="trailing" constant="12" id="ztt-EV-SOE"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="3vD-eb-ucv"/>
                     </view>
@@ -495,7 +509,7 @@
         <image name="calendar.png" width="1024" height="1024"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="6El-XK-6kg"/>
-        <segue reference="HRB-D2-5sO"/>
+        <segue reference="uNG-Ay-ppi"/>
+        <segue reference="vi6-4T-gqm"/>
     </inferredMetricsTieBreakers>
 </document>
