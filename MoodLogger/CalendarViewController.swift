@@ -255,7 +255,7 @@ extension CalendarViewController: JTAppleCalendarViewDelegate {
         tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.automatic)
         //tableView.reloadData()
         // entry 1 colored bar on calendar cell too thin when compared to the others
-        //when another entry is entered the color on the calendar is replaced by that new entry
+        //when another entry is entered, the color on the calendar is replaced by that new entry
     }    
 }
 
