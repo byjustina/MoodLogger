@@ -76,10 +76,6 @@ class CalendarViewController: UIViewController, UITableViewDataSource, UITableVi
         let mood = entriesForSelectedDay[indexPath.row]
         
         self.performSegue(withIdentifier: "editSegue", sender: mood)
-//        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "edit")
-//        let segue = UIStoryboardSegue(identifier: "editSegue", source: self, destination: vc)
-//        self.prepare(for: segue, sender: mood)
-      
     }
     
   
@@ -101,7 +97,7 @@ class CalendarViewController: UIViewController, UITableViewDataSource, UITableVi
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "moodTableViewCell", for: indexPath) as! MoodTableViewCell
         
-        let entry = entriesForSelectedDay[indexPath.row]
+        let entry = entriesForSelectedDay.reversed()[indexPath.row]
         cell.moodLabel.text = entry.mood.stringValue
         cell.timestampLabel.text = entry.timestamp?.convertToString() ?? "unknown"
         
@@ -336,6 +332,9 @@ extension CalendarViewController: JTAppleCalendarViewDelegate {
         calendarView.reloadDates(calendarView.selectedDates)
     }
     
+    //textviews for note screen aren't appearing
+    //font and everything appears fine on iphone but looks so much smaller on ipad
+    //new entries are underneath the older entries- no longer most recent on top and the least recent on the bottom
 }
 
 
