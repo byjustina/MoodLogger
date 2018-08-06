@@ -14,6 +14,7 @@ class CalendarViewController: UIViewController, UITableViewDataSource, UITableVi
     
     var entriesForSelectedDay = [Entry]()
     var date: String?
+    var newEntry: Entry?
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -27,6 +28,11 @@ class CalendarViewController: UIViewController, UITableViewDataSource, UITableVi
     let monthColor = UIColor(red: 253/255, green: 253/255, blue: 253/255, alpha: 1.0)
     let selectedMonthColor = UIColor.white
     let currentDateSelectedViewColor = UIColor(red: 100/255, green: 200/255, blue: 200/255, alpha: 1.0)
+    
+    
+    @IBAction func unwindToCalendar(_ segue: UIStoryboardSegue) {
+        
+    }
     
     override func viewDidLoad() {
        // UICollectionView.layer.borderColor = UIColor.white
@@ -42,10 +48,21 @@ class CalendarViewController: UIViewController, UITableViewDataSource, UITableVi
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        let today = Date()
-        calendarView.selectDates([today])
-        calendarView.scrollToDate(today, animateScroll: false)
-        entriesForSelectedDay = CoreDataHelper.retrieveEntry(for: today)
+        let dateToSelect: Date
+        
+        //check if newEntry has a value, its not nil
+        if let entry = newEntry {
+            //yes: get the date from newEntry
+            dateToSelect = entry.timestamp!
+            
+        } else {
+            //no: default to today's date
+            dateToSelect = Date()
+        }
+        
+        calendarView.selectDates([dateToSelect])
+        calendarView.scrollToDate(dateToSelect, animateScroll: false)
+        entriesForSelectedDay = CoreDataHelper.retrieveEntry(for: dateToSelect)
         tableView.reloadData()
     }
     
@@ -124,7 +141,7 @@ class CalendarViewController: UIViewController, UITableViewDataSource, UITableVi
         
         if cellState.isSelected {
             validCell.dateLabel.textColor = selectedMonthColor
-            validCell.dateLabel.textColor = .orange
+            validCell.dateLabel.textColor = #colorLiteral(red: 0.7275933623, green: 0.9249398112, blue: 0.8052063584, alpha: 1)
         } else {
             if cellState.dateBelongsTo == .thisMonth {
                 validCell.dateLabel.textColor = monthColor
@@ -316,9 +333,9 @@ extension CalendarViewController: JTAppleCalendarViewDelegate {
         CoreDataHelper.deleteEntry(entry: moodToDelete)
         entriesForSelectedDay.remove(at: indexPath.row)
         tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.automatic)
+        calendarView.reloadDates(calendarView.selectedDates)
     }
-    //organize notes from most recent to least recent
-    //make color when selecting dates change and when clicking on the cell of the calendar change-127
+    
 }
 
 

@@ -41,12 +41,16 @@ class NotesViewController: UIViewController {
             CoreDataHelper.saveEntry()
             
         case "save" where entry == nil:
-            let mood = CoreDataHelper.newEntry()
-            mood.answer1 = didAnswerView.text ?? ""
-            mood.answer2 = changeAnswerView.text ?? ""
-            mood.timestamp = Date()
+            let entry = CoreDataHelper.newEntry()
+            entry.answer1 = didAnswerView.text ?? ""
+            entry.answer2 = changeAnswerView.text ?? ""
+            entry.timestamp = Date()
             
             CoreDataHelper.saveEntry()
+            
+            //send entry to calendar view controller
+            
+            
         default:
             print("unexpected segue identifier")
         }
@@ -69,7 +73,7 @@ class NotesViewController: UIViewController {
             CoreDataHelper.deleteEntry(entry: entry!)
             performSegue(withIdentifier: "unwindCancel", sender: nil)
         } else {
-            performSegue(withIdentifier: "showCalendar", sender: nil)
+            performSegue(withIdentifier: "unwindToCalendar", sender: nil)
         }
         
     }
