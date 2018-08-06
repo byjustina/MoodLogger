@@ -70,8 +70,10 @@ struct CoreDataHelper {
             let dateMidnight = dateFromComponents
             let day: TimeInterval = 60*60*24
             let afterDateMidnight = dateMidnight.addingTimeInterval(day)
+            
             let fetchRequest = NSFetchRequest<Entry>(entityName: "Entry")
             fetchRequest.predicate = NSPredicate(format: "(%@ <= timestamp) AND (timestamp < %@)", dateMidnight as NSDate, afterDateMidnight as NSDate)
+            fetchRequest.sortDescriptors = [NSSortDescriptor(key: "timestamp", ascending: false)]
             let results = try context.fetch(fetchRequest)
             
             return results

@@ -108,7 +108,7 @@ class CalendarViewController: UIViewController, UITableViewDataSource, UITableVi
         if validCell.isSelected {
             validCell.selectedView.isHidden = false
             
-            validCell.layer.borderWidth = 1
+            validCell.layer.borderWidth = 0.5
             validCell.layer.borderColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
             
         } else {
@@ -124,6 +124,7 @@ class CalendarViewController: UIViewController, UITableViewDataSource, UITableVi
         
         if cellState.isSelected {
             validCell.dateLabel.textColor = selectedMonthColor
+            validCell.dateLabel.textColor = .orange
         } else {
             if cellState.dateBelongsTo == .thisMonth {
                 validCell.dateLabel.textColor = monthColor
@@ -192,6 +193,7 @@ extension CalendarViewController: JTAppleCalendarViewDelegate {
             myCustomCell.entry2.alpha = 0
             myCustomCell.entry3.alpha = 0
             myCustomCell.entry4.alpha = 0
+            myCustomCell.plusIcon.alpha = 0
         case 1:
             //case 1: update the first line with the color of the first entry, and hide all other lines
             let firstEntry = entries[0]
@@ -201,6 +203,8 @@ extension CalendarViewController: JTAppleCalendarViewDelegate {
             myCustomCell.entry2.alpha = 0
             myCustomCell.entry3.alpha = 0
             myCustomCell.entry4.alpha = 0
+            
+            myCustomCell.plusIcon.alpha = 0
         case 2:
             myCustomCell.entry1.alpha = 1
             let firstEntry = entries[0]
@@ -213,6 +217,8 @@ extension CalendarViewController: JTAppleCalendarViewDelegate {
             myCustomCell.entry2.backgroundColor = secondColor
             myCustomCell.entry3.alpha = 0
             myCustomCell.entry4.alpha = 0
+            
+            myCustomCell.plusIcon.alpha = 0
         case 3:
             myCustomCell.entry1.alpha = 1
             let firstEntry = entries[0]
@@ -229,6 +235,8 @@ extension CalendarViewController: JTAppleCalendarViewDelegate {
             let thirdColor = thirdEntry.mood.colorValue
             myCustomCell.entry3.backgroundColor = thirdColor
             myCustomCell.entry4.alpha = 0
+            
+            myCustomCell.plusIcon.alpha = 0
         case 4:
             myCustomCell.entry1.alpha = 1
             let firstEntry = entries[0]
@@ -249,8 +257,31 @@ extension CalendarViewController: JTAppleCalendarViewDelegate {
             let fourthEntry = entries[3]
             let fourthColor = fourthEntry.mood.colorValue
             myCustomCell.entry4.backgroundColor = fourthColor
+            
+            myCustomCell.plusIcon.alpha = 0
         default: //unhide the plus icon
-            break
+            myCustomCell.entry1.alpha = 1
+            let firstEntry = entries[0]
+            let firstColor = firstEntry.mood.colorValue
+            myCustomCell.entry1.backgroundColor = firstColor
+            
+            myCustomCell.entry2.alpha = 1
+            let secondEntry = entries[1]
+            let secondColor = secondEntry.mood.colorValue
+            myCustomCell.entry2.backgroundColor = secondColor
+            
+            myCustomCell.entry3.alpha = 1
+            let thirdEntry = entries[2]
+            let thirdColor = thirdEntry.mood.colorValue
+            myCustomCell.entry3.backgroundColor = thirdColor
+            
+            myCustomCell.entry4.alpha = 1
+            let fourthEntry = entries[3]
+            let fourthColor = fourthEntry.mood.colorValue
+            myCustomCell.entry4.backgroundColor = fourthColor
+            
+            //show the plus icon
+            myCustomCell.plusIcon.alpha = 1
         }
     }
     
@@ -286,6 +317,8 @@ extension CalendarViewController: JTAppleCalendarViewDelegate {
         entriesForSelectedDay.remove(at: indexPath.row)
         tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.automatic)
     }
+    //organize notes from most recent to least recent
+    //make color when selecting dates change and when clicking on the cell of the calendar change-127
 }
 
 
