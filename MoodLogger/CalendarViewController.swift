@@ -38,6 +38,13 @@ class CalendarViewController: UIViewController, UITableViewDataSource, UITableVi
         setupCalendarView()
 //        entriesForSelectedDay = CoreDataHelper.retrieveEntry()
         
+//        let temp: UIDatePicker = UIDatePicker(frame: self.view.frame)
+//        temp.setValue(UIColor.purple, forKey: "textColor")
+//
+//        view.addSubview(temp)
+
+//            UIDatePicker.setValue(UIColor.white, forKeyPath: "textColor")
+        
     }
     
     
@@ -256,7 +263,8 @@ extension CalendarViewController: JTAppleCalendarViewDelegate {
         //tableView.reloadData()
         // entry 1 colored bar on calendar cell too thin when compared to the others
         //when another entry is entered, the color on the calendar is replaced by that new entry
-    }    
+    }
+    
 }
 
 

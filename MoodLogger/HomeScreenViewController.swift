@@ -83,6 +83,7 @@ class HomeScreenViewController: UIViewController {
     @IBOutlet weak var amazingButton: UIButton!
     
     @IBOutlet weak var goodButton: UIButton!
+    
     @IBOutlet weak var neutralButton: UIButton!
 
     @IBOutlet weak var badButton: UIButton!
@@ -90,5 +91,10 @@ class HomeScreenViewController: UIViewController {
     @IBOutlet weak var terribleButton: UIButton!
 
     @IBOutlet weak var calendarButton: UIButton!
+    
+    @IBAction func amazingButtonTapped(_ sender: UIButton) {
+        amazingButton.layer.cornerRadius = 10
+        amazingButton.clipsToBounds = true
+    }
     
 }

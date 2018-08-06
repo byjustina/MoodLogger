@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MoodLogger/CalendarViewController.swift"
-            timestampString = "555048101.976881"
+            timestampString = "555217502.354279"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "212"
-            endingLineNumber = "212"
+            startingLineNumber = "219"
+            endingLineNumber = "219"
             landmarkName = "sharedFunctionToConfigureCell(myCustomCell:cellState:date:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MoodLogger/CalendarViewController.swift"
-            timestampString = "555048101.977054"
+            timestampString = "555217502.354668"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "204"
-            endingLineNumber = "204"
+            startingLineNumber = "211"
+            endingLineNumber = "211"
             landmarkName = "sharedFunctionToConfigureCell(myCustomCell:cellState:date:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MoodLogger/CalendarViewController.swift"
-            timestampString = "555048101.977131"
+            timestampString = "555217502.354843"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "196"
-            endingLineNumber = "196"
+            startingLineNumber = "203"
+            endingLineNumber = "203"
             landmarkName = "sharedFunctionToConfigureCell(myCustomCell:cellState:date:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MoodLogger/CalendarViewController.swift"
-            timestampString = "555048101.977201"
+            timestampString = "555217502.355008"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "187"
-            endingLineNumber = "187"
+            startingLineNumber = "194"
+            endingLineNumber = "194"
             landmarkName = "sharedFunctionToConfigureCell(myCustomCell:cellState:date:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -74,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MoodLogger/CalendarViewController.swift"
-            timestampString = "555048101.9772739"
+            timestampString = "555217502.355171"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "181"
-            endingLineNumber = "181"
+            startingLineNumber = "188"
+            endingLineNumber = "188"
             landmarkName = "sharedFunctionToConfigureCell(myCustomCell:cellState:date:)"
             landmarkType = "7">
          </BreakpointContent>

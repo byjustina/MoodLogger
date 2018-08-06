@@ -43,10 +43,17 @@
                                 <date key="date" timeIntervalSinceReferenceDate="554423156.46031106">
                                     <!--2018-07-27 22:25:56 +0000-->
                                 </date>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="textColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="highlightsToday" value="NO"/>
+                                </userDefinedRuntimeAttributes>
                             </datePicker>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How are you?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uGf-Yu-RCu">
                                 <rect key="frame" x="92" y="130" width="191" height="40"/>
                                 <fontDescription key="fontDescription" name="GeosansLight" family="GeosansLight" pointSize="36"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="LEk-7H-9kH">
@@ -54,11 +61,20 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wfR-yG-Nau">
                                         <rect key="frame" x="0.0" y="0.0" width="175" height="40"/>
+                                        <color key="backgroundColor" red="0.40392156862745099" green="0.72941176470588232" blue="0.20784313725490194" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="GeosansLight" family="GeosansLight" pointSize="25"/>
                                         <state key="normal" title="Amazing">
-                                            <color key="titleColor" red="0.40392156862745099" green="0.72941176470588232" blue="0.20784313725490194" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToRound" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="keyPath" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
+                                            <action selector="amazingButtonTapped:" destination="q2n-BV-C3m" eventType="touchUpInside" id="Njj-e5-ZOf"/>
                                             <segue destination="FQh-kh-7j0" kind="show" identifier="amazing" id="NKk-Lr-9pT"/>
                                         </connections>
                                     </button>
@@ -105,7 +121,7 @@
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="XjI-rf-ohG" firstAttribute="trailing" secondItem="LEk-7H-9kH" secondAttribute="trailing" constant="100" id="0kb-dg-73G"/>
                             <constraint firstItem="XjI-rf-ohG" firstAttribute="trailing" secondItem="1cV-4C-hod" secondAttribute="trailing" constant="20" id="Li1-4G-WPx"/>
@@ -415,8 +431,8 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.1960784314" green="0.60392156860000001" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What did you do today?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SLa-Jv-QT9">
-                                <rect key="frame" x="102.5" y="98" width="174" height="20"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="What did you do today?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SLa-Jv-QT9">
+                                <rect key="frame" x="102.5" y="99" width="174" height="20"/>
                                 <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -429,13 +445,13 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What do you want to do?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zsq-3F-Dxw">
-                                <rect key="frame" x="20" y="390" width="339" height="20"/>
+                                <rect key="frame" x="20" y="391" width="339" height="19"/>
                                 <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="4s4-yc-ulw">
-                                <rect key="frame" x="20" y="126" width="343" height="229"/>
+                                <rect key="frame" x="20" y="127" width="343" height="229"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="229" id="5SL-e9-YLi"/>
@@ -460,6 +476,7 @@
                             <constraint firstItem="Jx0-sy-jFf" firstAttribute="leading" secondItem="0yg-Vc-mw5" secondAttribute="leadingMargin" id="hk4-ym-ZDu"/>
                             <constraint firstItem="zsq-3F-Dxw" firstAttribute="centerX" secondItem="SLa-Jv-QT9" secondAttribute="centerX" id="kWi-jE-zFJ"/>
                             <constraint firstAttribute="bottom" secondItem="zsq-3F-Dxw" secondAttribute="bottom" constant="257" id="qgC-Px-ksg"/>
+                            <constraint firstItem="SLa-Jv-QT9" firstAttribute="top" secondItem="3vD-eb-ucv" secondAttribute="top" constant="35" id="rvS-JE-utd"/>
                             <constraint firstItem="4s4-yc-ulw" firstAttribute="top" secondItem="SLa-Jv-QT9" secondAttribute="bottom" constant="8" symbolic="YES" id="s8w-34-CsA"/>
                             <constraint firstItem="3vD-eb-ucv" firstAttribute="trailing" secondItem="4s4-yc-ulw" secondAttribute="trailing" constant="12" id="ztt-EV-SOE"/>
                         </constraints>
