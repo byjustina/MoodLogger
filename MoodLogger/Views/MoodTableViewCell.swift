@@ -14,4 +14,5 @@ class MoodTableViewCell: UITableViewCell {
     @IBOutlet weak var moodLabel: UILabel!
     @IBOutlet weak var timestampLabel: UILabel!
     
+    @IBOutlet weak var stripe: UIImageView!
 }

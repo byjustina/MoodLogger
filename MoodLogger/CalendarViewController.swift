@@ -36,15 +36,6 @@ class CalendarViewController: UIViewController, UITableViewDataSource, UITableVi
         tableView.dataSource = self
         
         setupCalendarView()
-//        entriesForSelectedDay = CoreDataHelper.retrieveEntry()
-        
-//        let temp: UIDatePicker = UIDatePicker(frame: self.view.frame)
-//        temp.setValue(UIColor.purple, forKey: "textColor")
-//
-//        view.addSubview(temp)
-
-//            UIDatePicker.setValue(UIColor.white, forKeyPath: "textColor")
-        
     }
     
     
@@ -93,9 +84,12 @@ class CalendarViewController: UIViewController, UITableViewDataSource, UITableVi
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "moodTableViewCell", for: indexPath) as! MoodTableViewCell
         
-        let mood = entriesForSelectedDay[indexPath.row]
-        cell.moodLabel.text = mood.mood.stringValue
-        cell.timestampLabel.text = mood.timestamp?.convertToString() ?? "unknown"
+        let entry = entriesForSelectedDay[indexPath.row]
+        cell.moodLabel.text = entry.mood.stringValue
+        cell.timestampLabel.text = entry.timestamp?.convertToString() ?? "unknown"
+        
+        cell.stripe.backgroundColor = entry.mood.colorValue
+        
         
         return cell
         
@@ -113,8 +107,15 @@ class CalendarViewController: UIViewController, UITableViewDataSource, UITableVi
         guard let validCell = view as? CustomCell else { return }
         if validCell.isSelected {
             validCell.selectedView.isHidden = false
+            
+            validCell.layer.borderWidth = 1
+            validCell.layer.borderColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+            
         } else {
             validCell.selectedView.isHidden = true
+            
+            validCell.layer.borderWidth = 0
+            validCell.layer.borderColor = nil
         }
     }
     
@@ -201,29 +202,53 @@ extension CalendarViewController: JTAppleCalendarViewDelegate {
             myCustomCell.entry3.alpha = 0
             myCustomCell.entry4.alpha = 0
         case 2:
+            myCustomCell.entry1.alpha = 1
+            let firstEntry = entries[0]
+            let firstColor = firstEntry.mood.colorValue
+            myCustomCell.entry1.backgroundColor = firstColor
+            
+            myCustomCell.entry2.alpha = 1
             let secondEntry = entries[1]
             let secondColor = secondEntry.mood.colorValue
             myCustomCell.entry2.backgroundColor = secondColor
-            myCustomCell.entry1.alpha = 0
-            myCustomCell.entry2.alpha = 1
             myCustomCell.entry3.alpha = 0
             myCustomCell.entry4.alpha = 0
         case 3:
+            myCustomCell.entry1.alpha = 1
+            let firstEntry = entries[0]
+            let firstColor = firstEntry.mood.colorValue
+            myCustomCell.entry1.backgroundColor = firstColor
+            
+            myCustomCell.entry2.alpha = 1
+            let secondEntry = entries[1]
+            let secondColor = secondEntry.mood.colorValue
+            myCustomCell.entry2.backgroundColor = secondColor
+            
+            myCustomCell.entry3.alpha = 1
             let thirdEntry = entries[2]
             let thirdColor = thirdEntry.mood.colorValue
             myCustomCell.entry3.backgroundColor = thirdColor
-            myCustomCell.entry1.alpha = 0
-            myCustomCell.entry2.alpha = 0
-            myCustomCell.entry3.alpha = 1
             myCustomCell.entry4.alpha = 0
         case 4:
+            myCustomCell.entry1.alpha = 1
+            let firstEntry = entries[0]
+            let firstColor = firstEntry.mood.colorValue
+            myCustomCell.entry1.backgroundColor = firstColor
+            
+            myCustomCell.entry2.alpha = 1
+            let secondEntry = entries[1]
+            let secondColor = secondEntry.mood.colorValue
+            myCustomCell.entry2.backgroundColor = secondColor
+            
+            myCustomCell.entry3.alpha = 1
+            let thirdEntry = entries[2]
+            let thirdColor = thirdEntry.mood.colorValue
+            myCustomCell.entry3.backgroundColor = thirdColor
+            
+            myCustomCell.entry4.alpha = 1
             let fourthEntry = entries[3]
             let fourthColor = fourthEntry.mood.colorValue
             myCustomCell.entry4.backgroundColor = fourthColor
-            myCustomCell.entry1.alpha = 0
-            myCustomCell.entry2.alpha = 0
-            myCustomCell.entry3.alpha = 0
-            myCustomCell.entry4.alpha = 1
         default: //unhide the plus icon
             break
         }
@@ -260,11 +285,7 @@ extension CalendarViewController: JTAppleCalendarViewDelegate {
         CoreDataHelper.deleteEntry(entry: moodToDelete)
         entriesForSelectedDay.remove(at: indexPath.row)
         tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.automatic)
-        //tableView.reloadData()
-        // entry 1 colored bar on calendar cell too thin when compared to the others
-        //when another entry is entered, the color on the calendar is replaced by that new entry
     }
-    
 }
 
 

@@ -263,7 +263,7 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Puz-sA-b7N">
-                                                            <rect key="frame" x="0.0" y="0.0" width="102" height="104.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="102" height="94"/>
                                                             <color key="backgroundColor" white="0.1173172188283208" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </view>
@@ -312,6 +312,11 @@
                                                         <real key="value" value="0.5"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <variation key="default">
+                                                    <mask key="subviews">
+                                                        <exclude reference="Puz-sA-b7N"/>
+                                                    </mask>
+                                                </variation>
                                                 <connections>
                                                     <outlet property="dateLabel" destination="t9f-zO-Hsj" id="A6b-ah-VX0"/>
                                                     <outlet property="entry1" destination="XFr-PN-075" id="nqe-cL-m1E"/>
@@ -340,36 +345,45 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="69.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Rvm-dB-lGU">
-                                                    <rect key="frame" x="15" y="0.0" width="345" height="69.5"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="jtK-p6-A02">
+                                                    <rect key="frame" x="0.0" y="0.0" width="360" height="69.5"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mood" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FWa-2a-dtK">
-                                                            <rect key="frame" x="0.0" y="0.0" width="345" height="35"/>
-                                                            <fontDescription key="fontDescription" name="GeosansLight" family="GeosansLight" pointSize="22"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last Modified Timestamp" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KmZ-Wr-A9G">
-                                                            <rect key="frame" x="0.0" y="35" width="345" height="34.5"/>
-                                                            <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="17"/>
-                                                            <color key="textColor" white="0.42992490993107768" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YqN-Va-0hL">
+                                                            <rect key="frame" x="0.0" y="0.0" width="8" height="69.5"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="8" id="jGH-wT-KwJ"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Rvm-dB-lGU">
+                                                            <rect key="frame" x="16" y="0.0" width="344" height="69.5"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mood" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FWa-2a-dtK">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="344" height="35"/>
+                                                                    <fontDescription key="fontDescription" name="GeosansLight" family="GeosansLight" pointSize="22"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last Modified Timestamp" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KmZ-Wr-A9G">
+                                                                    <rect key="frame" x="0.0" y="35" width="344" height="34.5"/>
+                                                                    <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="17"/>
+                                                                    <color key="textColor" white="0.42992490993107768" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                        </stackView>
                                                     </subviews>
-                                                    <constraints>
-                                                        <constraint firstItem="KmZ-Wr-A9G" firstAttribute="height" secondItem="FWa-2a-dtK" secondAttribute="height" id="sHx-Lz-9Dq"/>
-                                                    </constraints>
                                                 </stackView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="Rvm-dB-lGU" firstAttribute="leading" secondItem="WCK-aT-8Ri" secondAttribute="leading" constant="15" id="9OL-Zw-vcv"/>
-                                                <constraint firstItem="Rvm-dB-lGU" firstAttribute="top" secondItem="WCK-aT-8Ri" secondAttribute="top" id="BPx-h0-B1P"/>
-                                                <constraint firstAttribute="trailing" secondItem="Rvm-dB-lGU" secondAttribute="trailing" constant="15" id="j28-vl-mNk"/>
-                                                <constraint firstAttribute="bottom" secondItem="Rvm-dB-lGU" secondAttribute="bottom" id="xOt-ld-5XM"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="jtK-p6-A02" secondAttribute="trailing" id="85h-wv-dBX"/>
+                                                <constraint firstItem="jtK-p6-A02" firstAttribute="top" secondItem="WCK-aT-8Ri" secondAttribute="top" id="CAx-J3-uKl"/>
+                                                <constraint firstItem="jtK-p6-A02" firstAttribute="leading" secondItem="WCK-aT-8Ri" secondAttribute="leading" id="Rfd-Qy-73i"/>
+                                                <constraint firstAttribute="bottom" secondItem="jtK-p6-A02" secondAttribute="bottom" id="UhC-Y8-6Zo"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="moodLabel" destination="FWa-2a-dtK" id="Ktu-sW-aLk"/>
+                                            <outlet property="stripe" destination="YqN-Va-0hL" id="jy0-Ik-hka"/>
                                             <outlet property="timestampLabel" destination="KmZ-Wr-A9G" id="rGn-Kd-Uak"/>
                                         </connections>
                                     </tableViewCell>
@@ -426,9 +440,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LU9-xi-H5t">
-                                <rect key="frame" x="16" y="86" width="343" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LU9-xi-H5t">
+                                <rect key="frame" x="15" y="86" width="345" height="281"/>
                                 <color key="backgroundColor" red="0.1960784314" green="0.60392156860000001" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="What did you do today?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SLa-Jv-QT9">
@@ -460,6 +473,10 @@
                                 <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zyu-zD-NGd">
+                                <rect key="frame" x="15" y="383" width="345" height="273"/>
+                                <color key="backgroundColor" red="0.1960784314" green="0.60392156860000001" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -467,8 +484,12 @@
                             <constraint firstItem="4s4-yc-ulw" firstAttribute="leading" secondItem="3vD-eb-ucv" secondAttribute="leading" constant="20" id="BrW-V6-xm1"/>
                             <constraint firstItem="zsq-3F-Dxw" firstAttribute="top" secondItem="4s4-yc-ulw" secondAttribute="bottom" constant="35" id="F49-pl-l0X"/>
                             <constraint firstAttribute="bottom" secondItem="Jx0-sy-jFf" secondAttribute="bottom" constant="20" symbolic="YES" id="Hkt-uf-svc"/>
+                            <constraint firstItem="Zyu-zD-NGd" firstAttribute="top" secondItem="LU9-xi-H5t" secondAttribute="bottom" constant="24" id="JAx-Qn-fte"/>
                             <constraint firstItem="3vD-eb-ucv" firstAttribute="trailing" secondItem="Jx0-sy-jFf" secondAttribute="trailing" constant="12" id="K5l-pK-SSk"/>
+                            <constraint firstItem="LU9-xi-H5t" firstAttribute="top" secondItem="3vD-eb-ucv" secondAttribute="top" constant="24" id="L1w-Bi-f4l"/>
+                            <constraint firstItem="Zyu-zD-NGd" firstAttribute="leading" secondItem="3vD-eb-ucv" secondAttribute="leading" constant="15" id="LoN-Ei-xJT"/>
                             <constraint firstItem="zsq-3F-Dxw" firstAttribute="centerX" secondItem="Jx0-sy-jFf" secondAttribute="centerX" id="OHM-3p-H50"/>
+                            <constraint firstItem="Zyu-zD-NGd" firstAttribute="height" secondItem="LU9-xi-H5t" secondAttribute="height" id="RZl-xG-amK"/>
                             <constraint firstItem="3vD-eb-ucv" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="zsq-3F-Dxw" secondAttribute="trailing" id="XfB-3Y-g4R"/>
                             <constraint firstItem="4s4-yc-ulw" firstAttribute="leading" secondItem="zsq-3F-Dxw" secondAttribute="leading" id="YxB-7E-Tt5"/>
                             <constraint firstItem="zsq-3F-Dxw" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="0yg-Vc-mw5" secondAttribute="leading" id="ZZl-Dl-rPR"/>
@@ -478,6 +499,9 @@
                             <constraint firstAttribute="bottom" secondItem="zsq-3F-Dxw" secondAttribute="bottom" constant="257" id="qgC-Px-ksg"/>
                             <constraint firstItem="SLa-Jv-QT9" firstAttribute="top" secondItem="3vD-eb-ucv" secondAttribute="top" constant="35" id="rvS-JE-utd"/>
                             <constraint firstItem="4s4-yc-ulw" firstAttribute="top" secondItem="SLa-Jv-QT9" secondAttribute="bottom" constant="8" symbolic="YES" id="s8w-34-CsA"/>
+                            <constraint firstItem="LU9-xi-H5t" firstAttribute="leading" secondItem="3vD-eb-ucv" secondAttribute="leading" constant="15" id="y73-QC-pKx"/>
+                            <constraint firstItem="3vD-eb-ucv" firstAttribute="trailing" secondItem="LU9-xi-H5t" secondAttribute="trailing" constant="15" id="zFZ-tH-eNR"/>
+                            <constraint firstItem="3vD-eb-ucv" firstAttribute="trailing" secondItem="Zyu-zD-NGd" secondAttribute="trailing" constant="15" id="zYI-L5-LeL"/>
                             <constraint firstItem="3vD-eb-ucv" firstAttribute="trailing" secondItem="4s4-yc-ulw" secondAttribute="trailing" constant="12" id="ztt-EV-SOE"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="3vD-eb-ucv"/>
@@ -532,7 +556,7 @@
         <image name="calendar.png" width="1024" height="1024"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="3nI-XX-7uf"/>
+        <segue reference="3ik-ob-lFg"/>
         <segue reference="kXa-rV-4jl"/>
     </inferredMetricsTieBreakers>
 </document>

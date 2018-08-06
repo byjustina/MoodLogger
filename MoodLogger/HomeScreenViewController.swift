@@ -14,6 +14,8 @@ class HomeScreenViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        datePicker.setValue(UIColor.white, forKey: "textColor")
     }
 
     override func didReceiveMemoryWarning() {

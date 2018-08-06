@@ -132,11 +132,11 @@
 			isa = PBXGroup;
 			children = (
 				731D67FC2107E76B00E987EA /* AppDelegate.swift */,
-				731D67FE2107E76B00E987EA /* CalendarViewController.swift */,
 				733BF180210F953B006E04A2 /* HomeScreenViewController.swift */,
+				7378B802211227D00055ED1B /* calendar.png */,
 				733BF183210F9F6E006E04A2 /* NotesViewController.swift */,
 				731D68002107E76B00E987EA /* Main.storyboard */,
-				7378B802211227D00055ED1B /* calendar.png */,
+				731D67FE2107E76B00E987EA /* CalendarViewController.swift */,
 				731D68062107E76C00E987EA /* Assets.xcassets */,
 				731D68082107E76C00E987EA /* LaunchScreen.storyboard */,
 				731D680B2107E76C00E987EA /* Info.plist */,
