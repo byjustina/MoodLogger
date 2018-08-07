@@ -331,10 +331,6 @@ extension CalendarViewController: JTAppleCalendarViewDelegate {
         tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.automatic)
         calendarView.reloadDates(calendarView.selectedDates)
     }
-    
-    //textviews for note screen aren't appearing
-    //font and everything appears fine on iphone but looks so much smaller on ipad
-    //new entries are underneath the older entries- no longer most recent on top and the least recent on the bottom
 }
 
 

@@ -16,11 +16,13 @@ class NotesViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        hideKeyboardWhenTappedAround()
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-    
+        didAnswerView.isUserInteractionEnabled = true
+        changeAnswerView.isUserInteractionEnabled = true
         if let mood = entry {
             didAnswerView.text = mood.answer1
             changeAnswerView.text = mood.answer2
@@ -77,5 +79,17 @@ class NotesViewController: UIViewController {
         }
         
     }
+
+}
+
+extension NotesViewController {
+    func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(NotesViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
     
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
 }
