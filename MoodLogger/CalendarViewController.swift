@@ -137,7 +137,7 @@ class CalendarViewController: UIViewController, UITableViewDataSource, UITableVi
         
         if cellState.isSelected {
             validCell.dateLabel.textColor = selectedMonthColor
-            validCell.dateLabel.textColor = #colorLiteral(red: 0.7275933623, green: 0.9249398112, blue: 0.8052063584, alpha: 1)
+            validCell.dateLabel.textColor = #colorLiteral(red: 1, green: 0.4053067565, blue: 0.3813593388, alpha: 1)
         } else {
             if cellState.dateBelongsTo == .thisMonth {
                 validCell.dateLabel.textColor = monthColor
@@ -198,7 +198,7 @@ extension CalendarViewController: JTAppleCalendarViewDelegate {
         //create a var that has the count of the entries found
         let numberOfEntries = entries.count
         
-        //swtich on the count var
+        //switch on the count var
         switch numberOfEntries {
         case 0:
             //case 0: hide all the lines
