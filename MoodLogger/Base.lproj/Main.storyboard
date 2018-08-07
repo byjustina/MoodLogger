@@ -54,10 +54,10 @@
                                         </userDefinedRuntimeAttributes>
                                     </datePicker>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="LEk-7H-9kH">
-                                        <rect key="frame" x="94" y="256" width="187.5" height="303"/>
+                                        <rect key="frame" x="93.5" y="256" width="188" height="303"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wfR-yG-Nau">
-                                                <rect key="frame" x="0.0" y="0.0" width="187.5" height="51"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="188" height="51"/>
                                                 <color key="backgroundColor" red="0.40392156862745099" green="0.72941176470588232" blue="0.20784313725490194" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="GeosansLight" family="GeosansLight" pointSize="29"/>
                                                 <state key="normal" title="Amazing">
@@ -76,7 +76,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hFi-MP-nQc">
-                                                <rect key="frame" x="0.0" y="63" width="187.5" height="51"/>
+                                                <rect key="frame" x="0.0" y="63" width="188" height="51"/>
                                                 <color key="backgroundColor" red="1" green="0.83137254901960778" blue="0.14117647058823529" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <fontDescription key="fontDescription" name="GeosansLight" family="GeosansLight" pointSize="29"/>
                                                 <state key="normal" title="Good">
@@ -94,7 +94,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jze-3k-ikT">
-                                                <rect key="frame" x="0.0" y="126" width="187.5" height="51"/>
+                                                <rect key="frame" x="0.0" y="126" width="188" height="51"/>
                                                 <color key="backgroundColor" red="0.90980392156862744" green="0.25882352941176467" blue="0.14901960784313725" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="GeosansLight" family="GeosansLight" pointSize="29"/>
                                                 <state key="normal" title="Neutral">
@@ -112,7 +112,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7WO-dR-JgV">
-                                                <rect key="frame" x="0.0" y="189" width="187.5" height="51"/>
+                                                <rect key="frame" x="0.0" y="189" width="188" height="51"/>
                                                 <color key="backgroundColor" red="0.47843137250000001" green="0.2274509804" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="GeosansLight" family="GeosansLight" pointSize="29"/>
                                                 <state key="normal" title="Bad">
@@ -130,7 +130,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QlZ-sd-GRc">
-                                                <rect key="frame" x="0.0" y="252" width="187.5" height="51"/>
+                                                <rect key="frame" x="0.0" y="252" width="188" height="51"/>
                                                 <color key="backgroundColor" red="0.1960784314" green="0.60392156860000001" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="GeosansLight" family="GeosansLight" pointSize="29"/>
                                                 <state key="normal" title="Terrible">
@@ -341,13 +341,6 @@
                                                                 <constraint firstItem="lEf-Pt-49C" firstAttribute="width" secondItem="XMy-VK-Bkq" secondAttribute="width" id="lX5-My-fy7"/>
                                                             </constraints>
                                                         </stackView>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-plus-math-16.png" translatesAutoresizingMaskIntoConstraints="NO" id="5WB-RI-du2">
-                                                            <rect key="frame" x="44.5" y="3.5" width="15" height="15"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" constant="15" id="6d0-ZP-zAr"/>
-                                                                <constraint firstAttribute="height" constant="15" id="lvZ-Ha-6um"/>
-                                                            </constraints>
-                                                        </imageView>
                                                     </subviews>
                                                 </view>
                                                 <constraints>
@@ -358,9 +351,7 @@
                                                     <constraint firstAttribute="trailing" secondItem="Puz-sA-b7N" secondAttribute="trailing" id="aaA-fM-cyh"/>
                                                     <constraint firstItem="Puz-sA-b7N" firstAttribute="top" secondItem="0A0-Oe-OBg" secondAttribute="top" id="dlr-Xq-Br4"/>
                                                     <constraint firstAttribute="bottom" secondItem="XMy-VK-Bkq" secondAttribute="bottom" id="f9b-SO-3Dt"/>
-                                                    <constraint firstItem="t9f-zO-Hsj" firstAttribute="leading" secondItem="5WB-RI-du2" secondAttribute="trailing" constant="4" id="fCR-6F-Zf6"/>
                                                     <constraint firstAttribute="trailing" secondItem="XMy-VK-Bkq" secondAttribute="trailing" id="u89-Fp-KPV"/>
-                                                    <constraint firstItem="5WB-RI-du2" firstAttribute="centerY" secondItem="t9f-zO-Hsj" secondAttribute="centerY" id="zZM-3V-w7Y"/>
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
@@ -373,7 +364,6 @@
                                                     <outlet property="entry2" destination="DLy-iN-E5X" id="irm-ra-O7r"/>
                                                     <outlet property="entry3" destination="AlK-Vh-YnO" id="6Po-xd-MR4"/>
                                                     <outlet property="entry4" destination="Oer-if-F5I" id="9v4-mw-PoB"/>
-                                                    <outlet property="plusIcon" destination="5WB-RI-du2" id="72p-LV-p6J"/>
                                                     <outlet property="selectedView" destination="Puz-sA-b7N" id="Dk7-1b-akF"/>
                                                 </connections>
                                             </collectionViewCell>
@@ -387,7 +377,8 @@
                             </stackView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="UhH-oV-kbp">
                                 <rect key="frame" x="0.0" y="480" width="375" height="187"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="separatorColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="moodTableViewCell" rowHeight="70" id="vcj-gc-o9y" customClass="MoodTableViewCell" customModule="MoodLogger" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="70"/>
@@ -397,7 +388,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="jtK-p6-A02">
-                                                    <rect key="frame" x="0.0" y="0.0" width="360" height="69.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="360" height="69.666666666666671"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YqN-Va-0hL">
                                                             <rect key="frame" x="0.0" y="0.0" width="8" height="69.5"/>
@@ -508,21 +499,21 @@
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="4s4-yc-ulw">
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" indicatorStyle="white" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Seb-QK-HaJ">
                                                         <rect key="frame" x="0.0" y="23.5" width="329" height="228"/>
-                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="backgroundColor" white="0.14000000000000001" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="17"/>
-                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences" spellCheckingType="yes"/>
-                                                        <dataDetectorType key="dataDetectorTypes" shipmentTrackingNumber="YES"/>
+                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                         <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
-                                                                <integer key="value" value="5"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
-                                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                <integer key="value" value="15"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <outlet property="delegate" destination="FQh-kh-7j0" id="l9w-jh-F0c"/>
+                                                        </connections>
                                                     </textView>
                                                 </subviews>
                                             </stackView>
@@ -553,12 +544,21 @@
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jx0-sy-jFf">
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" indicatorStyle="white" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="R4w-zg-9WX">
                                                         <rect key="frame" x="0.0" y="23.5" width="329" height="228"/>
-                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="backgroundColor" white="0.14000000000000001" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="17"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                <integer key="value" value="15"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <outlet property="delegate" destination="FQh-kh-7j0" id="YHx-Qj-Ufi"/>
+                                                        </connections>
                                                     </textView>
                                                 </subviews>
                                             </stackView>
@@ -604,9 +604,9 @@
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
-                        <outlet property="changeAnswerView" destination="Jx0-sy-jFf" id="wIw-wK-QTh"/>
+                        <outlet property="changeAnswerView" destination="R4w-zg-9WX" id="JFs-mt-06k"/>
                         <outlet property="changeQuestionLabel" destination="zsq-3F-Dxw" id="uDc-5z-vQj"/>
-                        <outlet property="didAnswerView" destination="4s4-yc-ulw" id="Wlz-YI-42i"/>
+                        <outlet property="didAnswerView" destination="Seb-QK-HaJ" id="9v8-0l-sB7"/>
                         <outlet property="didQuestionLabel" destination="SLa-Jv-QT9" id="4xp-5z-ZI4"/>
                         <segue destination="Yjf-XI-CGt" kind="unwind" identifier="unwindCancel" unwindAction="unwindToHomescreen:" id="8gU-pE-s45"/>
                         <segue destination="Yjf-XI-CGt" kind="unwind" identifier="unwindToCalendar" unwindAction="unwindToCalendar:" id="XEw-Ng-lLi"/>
@@ -638,7 +638,6 @@
     </scenes>
     <resources>
         <image name="calendar.png" width="1024" height="1024"/>
-        <image name="icons8-plus-math-16.png" width="16" height="16"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="6El-XK-6kg"/>

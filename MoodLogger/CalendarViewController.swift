@@ -206,7 +206,7 @@ extension CalendarViewController: JTAppleCalendarViewDelegate {
             myCustomCell.entry2.alpha = 0
             myCustomCell.entry3.alpha = 0
             myCustomCell.entry4.alpha = 0
-            myCustomCell.plusIcon.alpha = 0
+//            myCustomCell.plusIcon.alpha = 0
         case 1:
             //case 1: update the first line with the color of the first entry, and hide all other lines
             let firstEntry = entries[0]
@@ -217,7 +217,7 @@ extension CalendarViewController: JTAppleCalendarViewDelegate {
             myCustomCell.entry3.alpha = 0
             myCustomCell.entry4.alpha = 0
             
-            myCustomCell.plusIcon.alpha = 0
+//            myCustomCell.plusIcon.alpha = 0
         case 2:
             myCustomCell.entry1.alpha = 1
             let firstEntry = entries[0]
@@ -231,7 +231,7 @@ extension CalendarViewController: JTAppleCalendarViewDelegate {
             myCustomCell.entry3.alpha = 0
             myCustomCell.entry4.alpha = 0
             
-            myCustomCell.plusIcon.alpha = 0
+//            myCustomCell.plusIcon.alpha = 0
         case 3:
             myCustomCell.entry1.alpha = 1
             let firstEntry = entries[0]
@@ -249,7 +249,7 @@ extension CalendarViewController: JTAppleCalendarViewDelegate {
             myCustomCell.entry3.backgroundColor = thirdColor
             myCustomCell.entry4.alpha = 0
             
-            myCustomCell.plusIcon.alpha = 0
+//            myCustomCell.plusIcon.alpha = 0
         case 4:
             myCustomCell.entry1.alpha = 1
             let firstEntry = entries[0]
@@ -271,30 +271,32 @@ extension CalendarViewController: JTAppleCalendarViewDelegate {
             let fourthColor = fourthEntry.mood.colorValue
             myCustomCell.entry4.backgroundColor = fourthColor
             
-            myCustomCell.plusIcon.alpha = 0
-        default: //unhide the plus icon
-            myCustomCell.entry1.alpha = 1
-            let firstEntry = entries[0]
-            let firstColor = firstEntry.mood.colorValue
-            myCustomCell.entry1.backgroundColor = firstColor
-            
-            myCustomCell.entry2.alpha = 1
-            let secondEntry = entries[1]
-            let secondColor = secondEntry.mood.colorValue
-            myCustomCell.entry2.backgroundColor = secondColor
-            
-            myCustomCell.entry3.alpha = 1
-            let thirdEntry = entries[2]
-            let thirdColor = thirdEntry.mood.colorValue
-            myCustomCell.entry3.backgroundColor = thirdColor
-            
-            myCustomCell.entry4.alpha = 1
-            let fourthEntry = entries[3]
-            let fourthColor = fourthEntry.mood.colorValue
-            myCustomCell.entry4.backgroundColor = fourthColor
-            
-            //show the plus icon
-            myCustomCell.plusIcon.alpha = 1
+//            myCustomCell.plusIcon.alpha = 0
+
+        default:
+            break
+//            myCustomCell.entry1.alpha = 1
+//            let firstEntry = entries[0]
+//            let firstColor = firstEntry.mood.colorValue
+//            myCustomCell.entry1.backgroundColor = firstColor
+//
+//            myCustomCell.entry2.alpha = 1
+//            let secondEntry = entries[1]
+//            let secondColor = secondEntry.mood.colorValue
+//            myCustomCell.entry2.backgroundColor = secondColor
+//
+//            myCustomCell.entry3.alpha = 1
+//            let thirdEntry = entries[2]
+//            let thirdColor = thirdEntry.mood.colorValue
+//            myCustomCell.entry3.backgroundColor = thirdColor
+//
+//            myCustomCell.entry4.alpha = 1
+//            let fourthEntry = entries[3]
+//            let fourthColor = fourthEntry.mood.colorValue
+//            myCustomCell.entry4.backgroundColor = fourthColor
+//
+//            //show the plus icon
+//            myCustomCell.plusIcon.alpha = 1
         }
     }
     
