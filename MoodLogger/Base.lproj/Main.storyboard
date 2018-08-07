@@ -68,7 +68,6 @@
                                                         <integer key="value" value="15"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToRound" value="YES"/>
-                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="keyPath" value="YES"/>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="amazingButtonTapped:" destination="q2n-BV-C3m" eventType="touchUpInside" id="Njj-e5-ZOf"/>
@@ -87,7 +86,6 @@
                                                         <integer key="value" value="15"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToRound" value="YES"/>
-                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="keyPath" value="YES"/>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <segue destination="FQh-kh-7j0" kind="show" identifier="good" id="uNG-Ay-ppi"/>
@@ -105,7 +103,6 @@
                                                         <integer key="value" value="15"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToRound" value="YES"/>
-                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="keyPath" value="YES"/>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <segue destination="FQh-kh-7j0" kind="show" identifier="neutral" id="3ik-ob-lFg"/>
@@ -123,7 +120,6 @@
                                                         <integer key="value" value="15"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToRound" value="YES"/>
-                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="keyPath" value="YES"/>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <segue destination="FQh-kh-7j0" kind="show" identifier="bad" id="0CE-lc-ADQ"/>
@@ -141,7 +137,6 @@
                                                         <integer key="value" value="15"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToRound" value="YES"/>
-                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="keyPath" value="YES"/>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <segue destination="FQh-kh-7j0" kind="show" identifier="terrible" id="3nI-XX-7uf"/>
@@ -380,7 +375,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="separatorColor" white="0.35226176697530864" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="moodTableViewCell" rowHeight="70" id="vcj-gc-o9y" customClass="MoodTableViewCell" customModule="MoodLogger" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="moodTableViewCell" rowHeight="70" id="vcj-gc-o9y" customClass="MoodTableViewCell" customModule="MoodLogger" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vcj-gc-o9y" id="WCK-aT-8Ri">
@@ -640,7 +635,7 @@
         <image name="calendar.png" width="1024" height="1024"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="6El-XK-6kg"/>
-        <segue reference="vi6-4T-gqm"/>
+        <segue reference="NKk-Lr-9pT"/>
+        <segue reference="kXa-rV-4jl"/>
     </inferredMetricsTieBreakers>
 </document>
