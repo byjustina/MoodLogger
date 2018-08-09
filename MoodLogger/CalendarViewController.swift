@@ -274,26 +274,25 @@ extension CalendarViewController: JTAppleCalendarViewDelegate {
 //            myCustomCell.plusIcon.alpha = 0
 
         default:
-            break
-//            myCustomCell.entry1.alpha = 1
-//            let firstEntry = entries[0]
-//            let firstColor = firstEntry.mood.colorValue
-//            myCustomCell.entry1.backgroundColor = firstColor
-//
-//            myCustomCell.entry2.alpha = 1
-//            let secondEntry = entries[1]
-//            let secondColor = secondEntry.mood.colorValue
-//            myCustomCell.entry2.backgroundColor = secondColor
-//
-//            myCustomCell.entry3.alpha = 1
-//            let thirdEntry = entries[2]
-//            let thirdColor = thirdEntry.mood.colorValue
-//            myCustomCell.entry3.backgroundColor = thirdColor
-//
-//            myCustomCell.entry4.alpha = 1
-//            let fourthEntry = entries[3]
-//            let fourthColor = fourthEntry.mood.colorValue
-//            myCustomCell.entry4.backgroundColor = fourthColor
+            myCustomCell.entry1.alpha = 1
+            let firstEntry = entries[0]
+            let firstColor = firstEntry.mood.colorValue
+            myCustomCell.entry1.backgroundColor = firstColor
+
+            myCustomCell.entry2.alpha = 1
+            let secondEntry = entries[1]
+            let secondColor = secondEntry.mood.colorValue
+            myCustomCell.entry2.backgroundColor = secondColor
+
+            myCustomCell.entry3.alpha = 1
+            let thirdEntry = entries[2]
+            let thirdColor = thirdEntry.mood.colorValue
+            myCustomCell.entry3.backgroundColor = thirdColor
+
+            myCustomCell.entry4.alpha = 1
+            let fourthEntry = entries[3]
+            let fourthColor = fourthEntry.mood.colorValue
+            myCustomCell.entry4.backgroundColor = fourthColor
 //
 //            //show the plus icon
 //            myCustomCell.plusIcon.alpha = 1

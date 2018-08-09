@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "731D67F82107E76B00E987EA"
-               BuildableName = "Moodday.app"
-               BlueprintName = "Moodday"
-               ReferencedContainer = "container:Moodday.xcodeproj">
+               BuildableName = "MoodLogger.app"
+               BlueprintName = "MoodLogger"
+               ReferencedContainer = "container:MoodLogger.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "731D67F82107E76B00E987EA"
-            BuildableName = "Moodday.app"
-            BlueprintName = "Moodday"
-            ReferencedContainer = "container:Moodday.xcodeproj">
+            BuildableName = "MoodLogger.app"
+            BlueprintName = "MoodLogger"
+            ReferencedContainer = "container:MoodLogger.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -56,9 +56,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "731D67F82107E76B00E987EA"
-            BuildableName = "Moodday.app"
-            BlueprintName = "Moodday"
-            ReferencedContainer = "container:Moodday.xcodeproj">
+            BuildableName = "MoodLogger.app"
+            BlueprintName = "MoodLogger"
+            ReferencedContainer = "container:MoodLogger.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -75,9 +75,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "731D67F82107E76B00E987EA"
-            BuildableName = "Moodday.app"
-            BlueprintName = "Moodday"
-            ReferencedContainer = "container:Moodday.xcodeproj">
+            BuildableName = "MoodLogger.app"
+            BlueprintName = "MoodLogger"
+            ReferencedContainer = "container:MoodLogger.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
