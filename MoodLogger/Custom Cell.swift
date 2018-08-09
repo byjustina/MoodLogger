@@ -19,5 +19,3 @@ class CustomCell: JTAppleCell {
     @IBOutlet weak var plusIcon: UIImageView!
     
 }
-
-

@@ -36,7 +36,7 @@ struct CoreDataHelper {
         }
     }
     
-    static func deleteEntry(entry: Entry) {
+   static func deleteEntry(entry: Entry) {
         context.delete(entry)
         saveEntry()
     }
