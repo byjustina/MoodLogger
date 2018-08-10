@@ -88,22 +88,19 @@ class NotesViewController: UIViewController {
         guard let identifier = segue.identifier else { return }
         
         switch identifier {
-        case "save" where entry != nil:
+        case "save":
             entry?.answer1 = didAnswerView.text ?? ""
             entry?.answer2 = changeAnswerView.text ?? ""
             
             CoreDataHelper.saveEntry()
-            
-        case "save" where entry == nil:
-            let entry = CoreDataHelper.newEntry()
-            entry.answer1 = didAnswerView.text ?? ""
-            entry.answer2 = changeAnswerView.text ?? ""
-            entry.timestamp = Date()
-            
-            CoreDataHelper.saveEntry()
-            
-            //send entry to calendar view controller
-            
+            if isCreatingNewEntry == true {
+                guard let viewController = segue.destination as? CalendarViewController else {
+                    fatalError("storyboard not set up correctly")
+                }
+                
+                viewController.newEntry = entry
+                
+            }
             
         default:
             print("unexpected segue identifier")

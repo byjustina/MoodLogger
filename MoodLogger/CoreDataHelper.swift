@@ -76,7 +76,7 @@ struct CoreDataHelper {
             fetchRequest.sortDescriptors = [NSSortDescriptor(key: "timestamp", ascending: false)]
             let results = try context.fetch(fetchRequest)
             
-            return results
+            return results.reversed()
         } catch let error {
             print("Could not fetch \(error.localizedDescription)")
             

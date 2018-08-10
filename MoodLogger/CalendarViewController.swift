@@ -97,7 +97,7 @@ class CalendarViewController: UIViewController, UITableViewDataSource, UITableVi
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "moodTableViewCell", for: indexPath) as! MoodTableViewCell
         
-        let entry = entriesForSelectedDay.reversed()[indexPath.row]
+        let entry = entriesForSelectedDay[indexPath.row]
         cell.moodLabel.text = entry.mood.stringValue
         cell.timestampLabel.text = entry.timestamp?.convertToString() ?? "unknown"
         
@@ -193,7 +193,7 @@ extension CalendarViewController: JTAppleCalendarViewDelegate {
         myCustomCell.dateLabel.text = cellState.text
         
         //fetch entries based off of the date from core data
-        let entries = CoreDataHelper.retrieveEntry(for: date)
+        let entries = Array<Entry>(CoreDataHelper.retrieveEntry(for: date).reversed())
         
         //create a var that has the count of the entries found
         let numberOfEntries = entries.count
