@@ -35,7 +35,7 @@ class CalendarViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     override func viewDidLoad() {
-        // UICollectionView.layer.borderColor = UIColor.white
+       // UICollectionView.layer.borderColor = UIColor.white
         super.viewDidLoad()
         //existing
         tableView.delegate = self
@@ -78,7 +78,7 @@ class CalendarViewController: UIViewController, UITableViewDataSource, UITableVi
         self.performSegue(withIdentifier: "editSegue", sender: mood)
     }
     
-    
+  
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let identifier = segue.identifier else { return }
         
@@ -97,7 +97,7 @@ class CalendarViewController: UIViewController, UITableViewDataSource, UITableVi
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "moodTableViewCell", for: indexPath) as! MoodTableViewCell
         
-        let entry = entriesForSelectedDay[indexPath.row]
+        let entry = entriesForSelectedDay.reversed()[indexPath.row]
         cell.moodLabel.text = entry.mood.stringValue
         cell.timestampLabel.text = entry.timestamp?.convertToString() ?? "unknown"
         
@@ -193,7 +193,7 @@ extension CalendarViewController: JTAppleCalendarViewDelegate {
         myCustomCell.dateLabel.text = cellState.text
         
         //fetch entries based off of the date from core data
-        let entries = Array<Entry>(CoreDataHelper.retrieveEntry(for: date).reversed())
+        let entries = CoreDataHelper.retrieveEntry(for: date)
         
         //create a var that has the count of the entries found
         let numberOfEntries = entries.count
@@ -206,7 +206,7 @@ extension CalendarViewController: JTAppleCalendarViewDelegate {
             myCustomCell.entry2.alpha = 0
             myCustomCell.entry3.alpha = 0
             myCustomCell.entry4.alpha = 0
-        //            myCustomCell.plusIcon.alpha = 0
+//            myCustomCell.plusIcon.alpha = 0
         case 1:
             //case 1: update the first line with the color of the first entry, and hide all other lines
             let firstEntry = entries[0]
@@ -217,7 +217,7 @@ extension CalendarViewController: JTAppleCalendarViewDelegate {
             myCustomCell.entry3.alpha = 0
             myCustomCell.entry4.alpha = 0
             
-        //            myCustomCell.plusIcon.alpha = 0
+//            myCustomCell.plusIcon.alpha = 0
         case 2:
             myCustomCell.entry1.alpha = 1
             let firstEntry = entries[0]
@@ -231,7 +231,7 @@ extension CalendarViewController: JTAppleCalendarViewDelegate {
             myCustomCell.entry3.alpha = 0
             myCustomCell.entry4.alpha = 0
             
-        //            myCustomCell.plusIcon.alpha = 0
+//            myCustomCell.plusIcon.alpha = 0
         case 3:
             myCustomCell.entry1.alpha = 1
             let firstEntry = entries[0]
@@ -249,7 +249,7 @@ extension CalendarViewController: JTAppleCalendarViewDelegate {
             myCustomCell.entry3.backgroundColor = thirdColor
             myCustomCell.entry4.alpha = 0
             
-        //            myCustomCell.plusIcon.alpha = 0
+//            myCustomCell.plusIcon.alpha = 0
         case 4:
             myCustomCell.entry1.alpha = 1
             let firstEntry = entries[0]
@@ -271,31 +271,31 @@ extension CalendarViewController: JTAppleCalendarViewDelegate {
             let fourthColor = fourthEntry.mood.colorValue
             myCustomCell.entry4.backgroundColor = fourthColor
             
-            //            myCustomCell.plusIcon.alpha = 0
-            
+//            myCustomCell.plusIcon.alpha = 0
+
         default:
             myCustomCell.entry1.alpha = 1
             let firstEntry = entries[0]
             let firstColor = firstEntry.mood.colorValue
             myCustomCell.entry1.backgroundColor = firstColor
-            
+
             myCustomCell.entry2.alpha = 1
             let secondEntry = entries[1]
             let secondColor = secondEntry.mood.colorValue
             myCustomCell.entry2.backgroundColor = secondColor
-            
+
             myCustomCell.entry3.alpha = 1
             let thirdEntry = entries[2]
             let thirdColor = thirdEntry.mood.colorValue
             myCustomCell.entry3.backgroundColor = thirdColor
-            
+
             myCustomCell.entry4.alpha = 1
             let fourthEntry = entries[3]
             let fourthColor = fourthEntry.mood.colorValue
             myCustomCell.entry4.backgroundColor = fourthColor
-            //
-            //            //show the plus icon
-            //            myCustomCell.plusIcon.alpha = 1
+//
+//            //show the plus icon
+//            myCustomCell.plusIcon.alpha = 1
         }
     }
     
@@ -310,7 +310,7 @@ extension CalendarViewController: JTAppleCalendarViewDelegate {
     func calendar(_ calendar: JTAppleCalendarView, didSelectDate date: Date, cell: JTAppleCell?, cellState: CellState) {
         handleCellSelected(view: cell, cellState: cellState)
         handleCellTextColor(view: cell, cellState: cellState)
-        
+       
         entriesForSelectedDay = CoreDataHelper.retrieveEntry(for: date)
         tableView.reloadData()
         
@@ -322,10 +322,10 @@ extension CalendarViewController: JTAppleCalendarViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        //        if editingStyle == .delete {
-        //            let moodToDelete = entriesForSelectedDay[indexPath.row]
-        //            CoreDataHelper.deleteEntry(entry: moodToDelete)
-        //            entriesForSelectedDay = CoreDataHelper.retrieveEntry()
+//        if editingStyle == .delete {
+//            let moodToDelete = entriesForSelectedDay[indexPath.row]
+//            CoreDataHelper.deleteEntry(entry: moodToDelete)
+//            entriesForSelectedDay = CoreDataHelper.retrieveEntry()
         let moodToDelete = entriesForSelectedDay[indexPath.row]
         CoreDataHelper.deleteEntry(entry: moodToDelete)
         entriesForSelectedDay.remove(at: indexPath.row)

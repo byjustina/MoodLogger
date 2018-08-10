@@ -17,7 +17,7 @@ class HomeScreenViewController: UIViewController {
         
         datePicker.setValue(UIColor.white, forKey: "textColor")
     }
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
@@ -31,7 +31,7 @@ class HomeScreenViewController: UIViewController {
         super.viewWillDisappear(animated)
         self.navigationController?.setNavigationBarHidden(false, animated: animated)
     }
-    
+
     @IBAction func unwindToHomescreen(_ segue: UIStoryboardSegue) {
         moods = CoreDataHelper.retrieveEntry()
     }
@@ -87,11 +87,11 @@ class HomeScreenViewController: UIViewController {
     @IBOutlet weak var goodButton: UIButton!
     
     @IBOutlet weak var neutralButton: UIButton!
-    
+
     @IBOutlet weak var badButton: UIButton!
-    
+
     @IBOutlet weak var terribleButton: UIButton!
-    
+
     @IBOutlet weak var calendarButton: UIButton!
     
     @IBAction func amazingButtonTapped(_ sender: UIButton) {

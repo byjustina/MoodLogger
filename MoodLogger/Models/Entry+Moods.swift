@@ -79,7 +79,7 @@ extension Entry {
                 fatalError("moodValue: \(moodValue) is out of bounds of Entry.Moods enum")
             }
             
-           return moodFromValue
+            return moodFromValue
         }
     }
 }

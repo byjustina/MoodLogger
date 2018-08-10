@@ -36,7 +36,7 @@ struct CoreDataHelper {
         }
     }
     
-    static func deleteEntry(entry: Entry) {
+   static func deleteEntry(entry: Entry) {
         context.delete(entry)
         saveEntry()
     }
@@ -76,7 +76,7 @@ struct CoreDataHelper {
             fetchRequest.sortDescriptors = [NSSortDescriptor(key: "timestamp", ascending: false)]
             let results = try context.fetch(fetchRequest)
             
-            return results.reversed()
+            return results
         } catch let error {
             print("Could not fetch \(error.localizedDescription)")
             

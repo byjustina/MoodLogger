@@ -12,22 +12,22 @@ class NotesViewController: UIViewController {
     
     var isCreatingNewEntry: Bool = true
     
-    var entry: Entry?
-    
+   var entry: Entry?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         hideKeyboardWhenTappedAround()
         
-        //        Listen for keyboard events
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+//        Listen for keyboard events
+            NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
     }
-    
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        //        didAnswerView.isUserInteractionEnabled = true
-        //        changeAnswerView.isUserInteractionEnabled = true
+//        didAnswerView.isUserInteractionEnabled = true
+//        changeAnswerView.isUserInteractionEnabled = true
         if let mood = entry {
             didAnswerView.text = mood.answer1
             changeAnswerView.text = mood.answer2
@@ -78,7 +78,7 @@ class NotesViewController: UIViewController {
         
         if notification.name == Notification.Name.UIKeyboardWillShow ||
             notification.name == Notification.Name.UIKeyboardWillChangeFrame {
-            //            pushUpViewIfNeeded()
+//            pushUpViewIfNeeded()
         } else {
             pushDownViewIfNeeded()
         }
@@ -88,19 +88,22 @@ class NotesViewController: UIViewController {
         guard let identifier = segue.identifier else { return }
         
         switch identifier {
-        case "save":
+        case "save" where entry != nil:
             entry?.answer1 = didAnswerView.text ?? ""
             entry?.answer2 = changeAnswerView.text ?? ""
             
             CoreDataHelper.saveEntry()
-            if isCreatingNewEntry == true {
-                guard let viewController = segue.destination as? CalendarViewController else {
-                    fatalError("storyboard not set up correctly")
-                }
-                
-                viewController.newEntry = entry
-                
-            }
+            
+        case "save" where entry == nil:
+            let entry = CoreDataHelper.newEntry()
+            entry.answer1 = didAnswerView.text ?? ""
+            entry.answer2 = changeAnswerView.text ?? ""
+            entry.timestamp = Date()
+            
+            CoreDataHelper.saveEntry()
+            
+            //send entry to calendar view controller
+            
             
         default:
             print("unexpected segue identifier")
@@ -110,7 +113,7 @@ class NotesViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    
+
     @IBOutlet weak var didQuestionLabel: UILabel!
     @IBOutlet weak var didAnswerView: UITextView!
     @IBOutlet weak var changeQuestionLabel: UILabel!
@@ -128,7 +131,7 @@ class NotesViewController: UIViewController {
         }
         
     }
-    
+
 }
 
 extension NotesViewController: UITextViewDelegate {
