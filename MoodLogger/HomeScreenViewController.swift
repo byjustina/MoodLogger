@@ -25,7 +25,13 @@ class HomeScreenViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(true, animated: true)
+//        UIApplication.shared.setStatusBarStyle(.lightContent, animated: true)
     }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+       return .lightContent
+    }
+    
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
